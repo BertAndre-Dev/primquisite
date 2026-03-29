@@ -1,0 +1,39 @@
+import Image from "next/image";
+
+export function HomeIntroSection() {
+  return (
+    <section className="bg-[#f2f2f2]">
+      <div className="mx-auto grid w-full items-center md:grid-cols-2 my-10">
+        {/* Image — flush left, no padding */}
+        <div className="relative h-[320px] w-full md:h-[620px]">
+          <Image
+            src="/images/landing/why.svg"
+            alt="Modern residential building exterior"
+            fill
+            className="object-contain"
+            priority={false}
+          />
+        </div>
+
+        {/* Text — padded only on the right column */}
+        <div className="px-4 py-10 md:px-8 md:py-0">
+          <p className="text-base font-semibold uppercase tracking-wide text-black">
+            Here is why you should choose
+          </p>
+          <h2 className="mt-1 text-2xl font-bold uppercase leading-tight text-black md:text-3xl">
+            Primquisite Real Estate
+          </h2>
+          <p className="mt-6 text-[14px] leading-8 text-black/80 md:text-base md:leading-[1.55]">
+            Nigeria&apos;s real estate market often falls short on delivery,
+            transparency, and long-term value. We close that gap by:
+          </p>
+          <ul className="mt-7 list-disc space-y-3 pl-6 text-[14px] leading-8 text-black/85 md:text-base md:leading-[1.45]">
+            <li>Embedding transparency into every stage</li>
+            <li>Managing estates beyond handover</li>
+            <li>Using technology to improve operations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
