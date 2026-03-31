@@ -37,7 +37,7 @@ export function PortfolioProjectDetail({
       <div className="mx-auto grid w-full max-w-7xl gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
         {/* Image — order-1 on mobile (top), order-1 on desktop (left) */}
         <div className="relative order-1 overflow-hidden rounded-lg">
-          <div className="relative w-full h-[600px]">
+          <div className="relative w-full h-[500px]">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -61,7 +61,9 @@ export function PortfolioProjectDetail({
         {/* Text — order-2 on mobile (below), order-2 on desktop (right) */}
         <div className="order-2 flex flex-col justify-center">
           <h2 className="text-3xl font-bold uppercase leading-tight md:text-4xl lg:text-[2.75rem]">
-            <span className={`${serifClassName} text-[#CBA668]`}>
+            <span
+              className={`${serifClassName} bg-gradient-to-r from-[#D0AA63] via-[#F0E0A0] to-[#D0AA63] bg-clip-text text-transparent`}
+            >
               {nameSerif}
             </span>
             <span className="font-sans font-semibold text-[#4C4C4C]">

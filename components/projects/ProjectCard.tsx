@@ -31,10 +31,12 @@ export function ProjectCard({
             src={imageSrc}
             alt={imageAlt ?? `${title} — ${location}`}
             fill
-            className="object-cover transition duration-300 group-hover:scale-[1.02]"
+            className="object-cover transition duration-500 group-hover:scale-[1.03]"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute left-3 top-3 flex flex-wrap gap-2">
+
+          {/* Badges */}
+          <div className="absolute left-3 top-3 flex flex-wrap gap-2 z-10">
             {badges.map((label) => (
               <span
                 key={label}
@@ -44,7 +46,30 @@ export function ProjectCard({
               </span>
             ))}
           </div>
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+          {/* Arrow button */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-black/60 text-white">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </div>
         </div>
+
         <div className="mt-4 text-left">
           <h3 className="text-lg font-bold text-black transition group-hover:text-black/80">
             {title}

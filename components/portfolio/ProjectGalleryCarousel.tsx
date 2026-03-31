@@ -175,8 +175,8 @@ export function ProjectGalleryCarousel({
   const offset = slideWidth > 0 ? index * (slideWidth + GAP) : 0;
 
   return (
-    <section className="bg-[#FAF9F6] px-4 pb-16 pt-4 md:px-6 md:pb-24 lg:px-8">
-      <div className="mx-auto w-full max-w-7xl">
+    <section className="bg-[#FAF9F6] px-4 md:px-0 md:pl-8 xl:pl-20 py-8">
+      <div className="">
         <div ref={trackRef} className="overflow-hidden rounded-xl">
           <div
             className="flex"
@@ -189,7 +189,7 @@ export function ProjectGalleryCarousel({
             {[...slides, ...slides, ...slides].map((img, i) => (
               <div
                 key={`${img.src}-${i}`}
-                className="relative aspect-[4/3] flex-shrink-0 overflow-hidden rounded-lg bg-neutral-200"
+                className="relative aspect-[4/4] flex-shrink-0 overflow-hidden rounded-lg bg-neutral-200"
                 style={{
                   width: slideWidth > 0 ? `${slideWidth}px` : "calc(33.333% - 11px)",
                 }}
@@ -212,22 +212,22 @@ export function ProjectGalleryCarousel({
             type="button"
             onClick={prev}
             disabled={animating}
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition hover:bg-[#D9A85F]/10 disabled:opacity-50"
+            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition hover:bg-[#D9A85F]/10 disabled:opacity-50 cursor-pointer"
             aria-label="Previous image"
           >
-            ←
+            <Image src="/icons/arrow-left.svg" alt="Previous image" width={24} height={24} />
           </button>
           <button
             type="button"
             onClick={next}
             disabled={animating}
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition hover:opacity-95 disabled:opacity-50"
+            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition hover:opacity-95 disabled:opacity-50 cursor-pointer"
             aria-label="Next image"
           >
-            →
+            <Image src="/icons/arrow-right.svg" alt="Next image" width={24} height={24} />
           </button>
 
-          <div className="ml-2 flex gap-2">
+          {/* <div className="ml-2 flex gap-2">
             {slides.map((_, i) => (
               <button
                 key={i}
@@ -239,7 +239,7 @@ export function ProjectGalleryCarousel({
                 }`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

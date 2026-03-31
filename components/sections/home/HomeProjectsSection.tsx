@@ -43,7 +43,7 @@ export function HomeProjectsSection({ title = "Our Projects" }: HomeProjectsSect
                   key={key}
                   type="button"
                   onClick={() => setFilter(key)}
-                  aria-pressed={selected ? "true" : "false"}
+                  // aria-pressed={selected ? "true" : "false"}
                   className={
                     selected
                       ? "rounded-md bg-[#D4A35A] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-95 cursor-pointer"
