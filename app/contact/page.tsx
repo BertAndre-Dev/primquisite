@@ -14,7 +14,7 @@ export default function ContactPage() {
       <ContactHero />
 
       <section className="bg-white px-4 py-14 md:px-6 md:py-20 lg:px-8">
-        <div className="mx-auto w-full max-w-5xl">
+        <div className="mx-auto w-full max-w-3xl xl:max-w-4xl">
           <h2 className="mb-12 text-center text-xl font-bold uppercase tracking-wide text-black md:text-2xl">
             Visit us or leave a message
           </h2>

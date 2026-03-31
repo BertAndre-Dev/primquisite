@@ -35,8 +35,9 @@ export function PortfolioProjectDetail({
   return (
     <section className="bg-white px-4 py-14 md:px-6 md:py-20 lg:px-8">
       <div className="mx-auto grid w-full max-w-7xl gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
-        <div className="relative order-2 overflow-hidden rounded-lg md:order-1">
-          <div className="relative aspect-[4/5] w-full md:aspect-[3/4]">
+        {/* Image — order-1 on mobile (top), order-1 on desktop (left) */}
+        <div className="relative order-1 overflow-hidden rounded-lg">
+          <div className="relative w-full h-[600px]">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -57,10 +58,13 @@ export function PortfolioProjectDetail({
           </div>
         </div>
 
-        <div className="order-1 flex flex-col justify-center md:order-2">
+        {/* Text — order-2 on mobile (below), order-2 on desktop (right) */}
+        <div className="order-2 flex flex-col justify-center">
           <h2 className="text-3xl font-bold uppercase leading-tight md:text-4xl lg:text-[2.75rem]">
-            <span className={`${serifClassName} text-[#CBA668]`}>{nameSerif}</span>
-            <span className="font-sans font-bold text-neutral-900">
+            <span className={`${serifClassName} text-[#CBA668]`}>
+              {nameSerif}
+            </span>
+            <span className="font-sans font-semibold text-[#4C4C4C]">
               {" "}
               {locationSans}
             </span>
@@ -81,7 +85,12 @@ export function PortfolioProjectDetail({
             className="mt-10 inline-flex w-fit items-center gap-2 rounded-md bg-[#CBA668] px-8 py-3.5 text-sm font-semibold text-white transition hover:opacity-95"
           >
             Read Project Brochure
-            <span aria-hidden>↗</span>
+            <Image
+              src="/arrow_outward.svg"
+              alt="Arrow outward"
+              width={24}
+              height={24}
+            />
           </Link>
         </div>
       </div>

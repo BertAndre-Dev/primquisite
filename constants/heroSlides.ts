@@ -15,7 +15,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     subtitle:
       "Developing premium properties. Deploying intelligent estate technology. Creating communities that endure.",
     cta: "EXPLORE OUR PORTFOLIO",
-    ctaHref: "/products",
+    ctaHref: "/portfolio",
   },
   {
     image: "/hero/arabella.svg",
@@ -23,7 +23,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     subtitle:
       "A premium residential development delivering comfort, security, and strong asset value.",
     cta: "VIEW PROJECT",
-    ctaHref: "/products",
+    ctaHref: "/portfolio",
   },
   {
     image: "/hero/nacre.svg",
@@ -31,7 +31,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     subtitle:
       "A luxury residential development in one of Lagos' most prestigious locations.",
     cta: "VIEW PROJECT",
-    ctaHref: "/products",
+    ctaHref: "/portfolio",
   },
   {
     image: "/hero/cresendo.svg",
@@ -39,7 +39,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     subtitle:
       "An ongoing development focused on lifestyle, sustainability, and modern living.",
     cta: "VIEW PROJECT",
-    ctaHref: "/products",
+    ctaHref: "/portfolio",
   },
   {
     image: "/hero/ezra.svg",
@@ -47,7 +47,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     subtitle:
       "A well-planned residential community combining thoughtful design with quality finishes.",
     cta: "VIEW PROJECT",
-    ctaHref: "/products",
+    ctaHref: "/portfolio",
   },
 ];
 

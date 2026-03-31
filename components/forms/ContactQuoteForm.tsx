@@ -26,9 +26,9 @@ export function ContactQuoteForm() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-2xl px-6 py-14 md:px-12 md:py-20">
-      <h2 className="mb-14 text-center text-xs font-bold uppercase leading-relaxed tracking-[0.15em] text-[#CBA35C] md:text-sm">
-        Interested in owning or investing ?
+    <div className="mx-auto w-full max-w-3xl xl:max-w-4xl py-14">
+      <h2 className="mb-14 text-center text-2xl md:text-3xl font-bold uppercase leading-relaxed tracking-[0.15em] text-[#CBA35C]">
+        Interested in owning or investing?
       </h2>
 
       <form action={handleSubmit} className="space-y-12">

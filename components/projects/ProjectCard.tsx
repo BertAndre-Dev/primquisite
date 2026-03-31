@@ -17,7 +17,7 @@ export function ProjectCard({
   location,
   imageSrc,
   imageAlt,
-  href = "/products",
+  href = "/portfolio",
   badges = DEFAULT_BADGES,
 }: ProjectCardProps) {
   return (

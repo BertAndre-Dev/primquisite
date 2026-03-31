@@ -7,7 +7,8 @@ export const LANDING_PROJECTS: Project[] = [
     location: "Lekki Phase 1",
     imageSrc: "/hero/arabella.svg",
     status: "active",
-    badges: ["Residential", "Luxury Homes"],
+    slug: "arabella",
+    badges: ["Residential", "Luxury Homes", "Ongoing"],
   },
   {
     id: "ezra-court",
@@ -15,7 +16,8 @@ export const LANDING_PROJECTS: Project[] = [
     location: "Lekki",
     imageSrc: "/hero/ezra.svg",
     status: "active",
-    badges: ["Residential", "Luxury Homes"],
+    slug: "ezra-court",
+    badges: ["Residential", "Luxury Homes", "Active"],
   },
   {
     id: "crescendo",

@@ -1,3 +1,4 @@
+import { PortfolioContactSection } from "@/components/portfolio/PortfolioContactSection";
 import { PortfolioProjectDetail } from "@/components/portfolio/PortfolioProjectDetail";
 import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHero";
 import { ProjectGalleryCarousel } from "@/components/portfolio/ProjectGalleryCarousel";
@@ -31,8 +32,8 @@ export default function CrescendoPortfolioPage() {
         backgroundImage={HERO_FIRST_SLIDE_IMAGE}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Portfolio", href: "/products" },
-          { label: "Crescendo", href: "/products/crescendo" },
+          { label: "Portfolio", href: "/portfolio" },
+          { label: "Crescendo", href: "/portfolio/crescendo" },
         ]}
       />
       <PortfolioProjectDetail
@@ -44,6 +45,7 @@ export default function CrescendoPortfolioPage() {
         imageAlt="Crescendo residential development exterior"
       />
       <ProjectGalleryCarousel images={CRESCENDO_GALLERY} />
+      <PortfolioContactSection />
     </>
   );
 }

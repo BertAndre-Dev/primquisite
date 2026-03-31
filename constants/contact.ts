@@ -10,19 +10,19 @@ export const CONTACT_INFO_ITEMS: ContactInfoItem[] = [
   {
     id: "phone",
     label: "Phone:",
-    value: "0812345678",
+    value: "234 913 866 7927",
     icon: "/icons/phone.svg",
   },
   {
     id: "email",
     label: "Email:",
-    value: "Info@Saairenergy.Com",
+    value: "info@primquisite.com",
     icon: "/icons/email.svg",
   },
   {
     id: "hours",
     label: "Hours:",
-    value: "Mon-Fri: 8am – 4pm",
+    value: "Mon-Fri: 8am - 4pm",
     icon: "clock",
   },
   {

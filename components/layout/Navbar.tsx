@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/products", label: "Portfolio" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/services", label: "Services" },
 ] as const;
 
@@ -89,7 +89,7 @@ export function Navbar() {
         <button
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded border border-white/40 text-white lg:hidden"
-          aria-expanded={open}
+          // aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}

@@ -13,7 +13,12 @@ const FILTERS: { key: Filter; label: string }[] = [
   { key: "ongoing", label: "Ongoing" },
 ];
 
-export function HomeProjectsSection() {
+interface HomeProjectsSectionProps {
+  /** Section heading. Defaults to "Our Projects". Pass false to hide it. */
+  title?: string | false;
+}
+
+export function HomeProjectsSection({ title = "Our Projects" }: HomeProjectsSectionProps) {
   const [filter, setFilter] = useState<Filter>("all");
 
   const visible = useMemo(() => {
@@ -25,9 +30,11 @@ export function HomeProjectsSection() {
     <section className="bg-white px-4 py-14 md:px-6 md:py-20 lg:px-8">
       <div className="mx-auto w-full max-w-7xl">
         <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="text-2xl font-bold uppercase tracking-wide text-black md:text-3xl">
-            Our Projects
-          </h2>
+          {title !== false && (
+            <h2 className="text-2xl font-bold uppercase tracking-wide text-black md:text-3xl">
+              {title}
+            </h2>
+          )}
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 cursor-pointer">
             {FILTERS.map(({ key, label }) => {
               const selected = filter === key;
@@ -36,7 +43,7 @@ export function HomeProjectsSection() {
                   key={key}
                   type="button"
                   onClick={() => setFilter(key)}
-                  aria-pressed={selected}
+                  aria-pressed={selected ? "true" : "false"}
                   className={
                     selected
                       ? "rounded-md bg-[#D4A35A] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-95 cursor-pointer"
@@ -59,8 +66,8 @@ export function HomeProjectsSection() {
                 imageSrc={project.imageSrc}
                 href={
                   project.slug
-                    ? `/products/${project.slug}`
-                    : `/products#${project.id}`
+                    ? `/portfolio/${project.slug}`
+                    : `/portfolio#${project.id}`
                 }
                 badges={project.badges}
               />

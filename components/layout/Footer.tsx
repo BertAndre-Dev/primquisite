@@ -11,7 +11,7 @@ const services = [
 
 const links = [
   { href: "/about", label: "About Us" },
-  { href: "/products", label: "Portfolio" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
 ];
@@ -52,7 +52,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Image src="/icons/email.svg" alt="" width={16} height={22} />
-                <span>Email: info@ssairenergy.com</span>
+                <span>Email: info@primquisite.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Image src="/icons/phone.svg" alt="" width={16} height={22} />
