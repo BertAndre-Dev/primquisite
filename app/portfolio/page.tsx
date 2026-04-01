@@ -1,7 +1,6 @@
 import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHero";
 import { HomeProjectsSection } from "@/components/sections/home/HomeProjectsSection";
 import { PortfolioContactSection } from "@/components/portfolio/PortfolioContactSection";
-import Image from "next/image";
 import { HERO_FIRST_SLIDE_IMAGE } from "@/constants/heroSlides";
 
 export default function PortfolioPage() {

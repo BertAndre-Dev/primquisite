@@ -11,12 +11,10 @@ const serif = Cormorant_Garamond({
 });
 
 const EZRA_GALLERY = [
-  { src: "/hero/ezra.svg", alt: "Ezra Court residential development" },
   { src: "/ezra/ezra-1.svg", alt: "Community and landscaping" },
   { src: "/ezra/ezra-2.svg", alt: "Residential amenities" },
-  { src: "/ezra/ezra-3.svg", alt: "Residential amenities" },
-  { src: "/ezra/ezra-4.svg", alt: "Residential amenities" },
-  { src: "/ezra/ezra-5.svg", alt: "Residential amenities" },
+  { src: "/ezra/ezra-3.jpeg", alt: "Residential amenities" },
+  { src: "/ezra/ezra-4.jpeg", alt: "Residential amenities" },
 ];
 
 export const metadata: Metadata = {

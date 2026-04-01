@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { CookieBanner } from "@/components/legal/CookieBanner";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -12,6 +13,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Primquisite Real Estate",
   description: "Primquisite Real Estate",
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +30,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

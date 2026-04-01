@@ -17,7 +17,7 @@ export type Project = {
   location: string;
   imageSrc: string;
   status: ProjectStatus;
-  /** If set, project card links here instead of /products#id */
+  /** If set, project card links here instead of /portfolio#id */
   slug?: string;
   badges?: string[];
 };

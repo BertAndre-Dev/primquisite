@@ -89,7 +89,7 @@ export function Navbar() {
         <button
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded border border-white/40 text-white lg:hidden"
-          // aria-expanded={open}
+          aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
@@ -111,33 +111,46 @@ export function Navbar() {
       {open ? (
         <div
           id="mobile-nav"
-          className="fixed inset-0 top-[72px] z-[100] flex flex-col overflow-y-auto bg-[#231F20]/98 px-6 py-8 lg:hidden"
+          className="fixed inset-0 z-[100] bg-[#231F20]/98 lg:hidden"
+          role="dialog"
+          aria-modal="true"
         >
-          <ul className="flex flex-col gap-6">
-            {navLinks.map((link) => {
-              const active = isActive(pathname, link.href);
-              return (
-                <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`text-sm font-semibold uppercase tracking-[0.2em] text-white ${
-                    active ? "text-[#C8A168]" : ""
-                  }`}
-                  onClick={() => setOpen(false)}
-                >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex w-full justify-center border border-white px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-white"
-            onClick={() => setOpen(false)}
-          >
-            Send us a message
-          </Link>
+          <div className="mx-auto flex h-full w-full max-w-7xl flex-col px-6 pb-10 pt-24">
+            <ul className="flex flex-col gap-6">
+              {navLinks.map((link) => {
+                const active = isActive(pathname, link.href);
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`text-base font-semibold uppercase tracking-[0.2em] text-white ${
+                        active ? "text-[#C8A168]" : ""
+                      }`}
+                      onClick={() => setOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
+            <Link
+              href="/contact"
+              className="mt-10 inline-flex w-full justify-center border border-white px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-white"
+              onClick={() => setOpen(false)}
+            >
+              Send us a message
+            </Link>
+
+            <button
+              type="button"
+              className="mt-auto inline-flex w-full justify-center rounded border border-white/40 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-white"
+              onClick={() => setOpen(false)}
+            >
+              Close
+            </button>
+          </div>
         </div>
       ) : null}
     </header>

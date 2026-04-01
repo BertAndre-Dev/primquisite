@@ -12,9 +12,10 @@ const serif = Cormorant_Garamond({
 });
 
 const CRESCENDO_GALLERY = [
-  { src: "/hero/cresendo.svg", alt: "Crescendo residential development" },
-  { src: "/images/landing/why.svg", alt: "Interior and living space" },
-  { src: "/images/landing/partner.svg", alt: "Community and amenities" },
+  { src: "/cresendo/cres1.svg", alt: "Crescendo residential development" },
+  { src: "/cresendo/cres2.svg", alt: "Interior and living space" },
+  { src: "/cresendo/cres3.jpeg", alt: "Community and amenities" },
+  { src: "/cresendo/cres4.jpeg", alt: "Community and amenities" },
 ];
 
 export const metadata: Metadata = {
