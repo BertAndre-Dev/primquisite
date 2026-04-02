@@ -12,8 +12,8 @@ export default function Home() {
       <Hero />
       <HomeValueSection />
       <HomeIntroSection />
-      <HomeProjectsSection />
       <HomeServicePillarsSection />
+      <HomeProjectsSection />
       <HomeSmarterPropertiesSection />
       <HomePartnerSection />
     </div>

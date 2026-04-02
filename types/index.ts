@@ -25,6 +25,7 @@ export type Project = {
 /** Full-bleed image card with overlay title (service pillars, feature strips). */
 export type OverlayImageCardData = {
   backgroundImage: string;
+  description: string;
   title: string;
   alt: string;
 };
