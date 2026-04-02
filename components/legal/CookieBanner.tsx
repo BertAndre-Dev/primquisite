@@ -57,10 +57,10 @@ export function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[200]">
-      <div className="mx-auto w-full max-w-7xl px-4 pb-4 md:px-6">
+    <div className="fixed inset-x-0 bottom-0 z-[200] text-center">
+      <div className="mx-auto w-full max-w-4xl px-4 pb-4 md:px-6 text-center">
         <div className="rounded-lg bg-[#231F20]/95 p-4 text-white shadow-2xl backdrop-blur md:p-5">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-4 md:items-center md:justify-between">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-wide text-[#D0AA63]">
                 Cookie Notice
@@ -68,11 +68,11 @@ export function CookieBanner() {
               <p className="mt-2 text-sm text-white/90">
                 We use cookies to improve your experience. You can accept or
                 reject non-essential cookies. Read our{" "}
-                <Link className="underline" href="/cookie-notice-policy">
+                <Link className="underline text-[#D0AA63] hover:text-[#F0E0A0] cursor-pointer" href="/cookie-notice-policy" target="_blank" rel="noopener noreferrer">
                   Cookie Notice &amp; Policy
                 </Link>{" "}
                 and{" "}
-                <Link className="underline" href="/privacy-notice">
+                <Link className="underline text-[#D0AA63] hover:text-[#F0E0A0] cursor-pointer" href="/privacy-notice" target="_blank" rel="noopener noreferrer">
                   Privacy Notice
                 </Link>
                 .
@@ -84,7 +84,7 @@ export function CookieBanner() {
                 <button
                   key={a.key}
                   type="button"
-                  className={a.className}
+                  className={a.className + " cursor-pointer"}
                   onClick={() => {
                     writeConsent(a.key);
                     setVisible(false);
@@ -95,9 +95,6 @@ export function CookieBanner() {
               ))}
             </div>
           </div>
-          <p className="mt-3 text-xs text-white/60">
-            Your choice is saved for 7 days.
-          </p>
         </div>
       </div>
     </div>
