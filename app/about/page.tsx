@@ -16,7 +16,6 @@ export default function AboutPage() {
     <>
       <AboutHeroSection />
       <AboutWhoWeAreSection />
-
       <AboutMissionVisionSection />
       <AboutCoreValuesSection />
       <PortfolioContactSection />

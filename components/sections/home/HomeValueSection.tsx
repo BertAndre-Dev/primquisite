@@ -6,7 +6,7 @@ export function HomeValueSection() {
     <section className="bg-[#231F20] text-[#EDE6DA]">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-8 xl:px-0 py-16 md:py-20">
         {/* Heading spans full width above the grid */}
-        <h2 className="text-2xl font-regular leading-tight md:text-3xl md:leading-snug">
+        <h2 className="text-2xl font-regular leading-tight max-w-5xl md:leading-snug">
           Primquisite Real Estate Combines High-Quality Development With
           Intelligent Estate Systems To Deliver Long-Term Value For Residents,
           Investors, And Partners.

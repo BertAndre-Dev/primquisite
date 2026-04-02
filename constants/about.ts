@@ -1,19 +1,70 @@
-export type MissionVisionSlide = {
-  id: "mission" | "vision";
-  title: string;
-  body: string;
+export type AboutCarouselMissionVisionSlide = {
+  id: "mission-vision";
+  layout: "mission-vision";
+  leftImage: string;
+  leftImageAlt: string;
+  mission: { body: string };
+  vision: { body: string };
 };
 
-export const MISSION_VISION_SLIDES: MissionVisionSlide[] = [
+export type AboutCarouselBulletsSlide = {
+  id: "approach" | "why";
+  layout: "bullets";
+  title: string;
+  leftImage: string;
+  leftImageAlt: string;
+  intro: string;
+  bullets: string[];
+  closing?: string;
+};
+
+export type AboutCarouselSlide =
+  | AboutCarouselMissionVisionSlide
+  | AboutCarouselBulletsSlide;
+
+export const ABOUT_CAROUSEL_SLIDES: AboutCarouselSlide[] = [
   {
-    id: "mission",
-    title: "Mission",
-    body: "To deliver real estate investments that create long-term value through strong execution, transparency, and quality.",
+    id: "mission-vision",
+    layout: "mission-vision",
+    leftImage: "/about/mission.svg",
+    leftImageAlt: "Primquisite residential development at dusk",
+    mission: {
+      body: "To deliver real estate investments that create long-term value through strong execution, transparency, and quality.",
+    },
+    vision: {
+      body: "To become a leading real estate company in Africa known for premium developments and intelligent estate ecosystems.",
+    },
   },
   {
-    id: "vision",
-    title: "Vision",
-    body: "To become a leading real estate company in Africa known for premium developments and intelligent estate ecosystems.",
+    id: "approach",
+    layout: "bullets",
+    title: "OUR APPROACH",
+    leftImage: "/about/engineer.svg",
+    leftImageAlt: "Construction and project delivery",
+    intro: "We operate across the full lifecycle:",
+    bullets: [
+      "Land acquisition & feasibility",
+      "Development & construction",
+      "Digital property management",
+      "Long-term asset optimization",
+    ],
+    closing:
+      "This ensures accountability at every stage and not just at handover.",
+  },
+  {
+    id: "why",
+    layout: "bullets",
+    title: "WHY WE EXIST",
+    leftImage: "/about/house.svg",
+    leftImageAlt: "Modern residential development",
+    intro: "We address key industry challenges:",
+    bullets: [
+      "Poor construction quality",
+      "Weak estate management",
+      "Fragmented service delivery",
+      "Lack of investor transparency",
+      "Limited operational data",
+    ],
   },
 ];
 

@@ -40,9 +40,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid gap-10 xl:gap-20 md:grid-cols-3">
+        <div className="grid gap-10 md:gap-20 xl:gap-60 md:grid-cols-3">
           <section>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
+            <h3 className="mb-4 md:mb-8 text-sm font-semibold uppercase tracking-wide text-white">
               Visit Us
             </h3>
             <ul className="space-y-3 text-sm leading-6 text-[#D5CFC7]">
@@ -67,7 +67,7 @@ export function Footer() {
                   key={item.label}
                   href={item.href}
                   aria-label={item.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDA74F]"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDA74F] hover:bg-[#DDA74F]/10"
                 >
                   <Image src={item.icon} alt="" width={18} height={18} />
                 </Link>
@@ -76,7 +76,7 @@ export function Footer() {
           </section>
 
           <section>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
+            <h3 className="mb-4 md:mb-8 text-sm font-semibold uppercase tracking-wide text-white">
               Services
             </h3>
             <ul className="space-y-2 text-sm leading-6 text-[#D5CFC7]">
@@ -87,7 +87,7 @@ export function Footer() {
           </section>
 
           <section>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
+            <h3 className="mb-4 md:mb-8 text-sm font-semibold uppercase tracking-wide text-white">
               Links
             </h3>
             <ul className="space-y-2 text-sm leading-6 text-[#D5CFC7]">
