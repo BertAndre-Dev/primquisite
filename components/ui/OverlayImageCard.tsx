@@ -16,42 +16,32 @@ export function OverlayImageCard({
 }: OverlayImageCardProps) {
   return (
     <div
-      className={`group relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-neutral-300 md:aspect-[4/5] ${
-        className ?? ""
-      }`}
+      className={`group relative h-[420px] flex-1 overflow-hidden rounded-lg transition-all duration-500 ease-in-out hover:flex-[2] ${className ?? ""}`}
     >
-      {/* Background image — zoom on hover */}
+      {/* Background */}
       <Image
         src={backgroundImage}
         alt={alt}
         fill
         className="object-cover transition duration-700 ease-in-out group-hover:scale-[1.06]"
-        sizes="(max-width: 768px) 100vw, 33vw"
       />
 
-      {/* Dark overlay */}
-      <div
-        className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/35 transition-all duration-500 group-hover:from-black/90 group-hover:via-black/60 group-hover:to-black/50"
-        aria-hidden
-      />
+      {/* Overlay — darkens on hover */}
+      <div className="absolute inset-0 bg-black/40 transition duration-500 group-hover:bg-black/55" />
 
-      {/* Title */}
-      <div className="absolute inset-0 flex flex-col justify-center p-6 md:p-8">
-        <h3 className="max-w-[95%] text-left text-lg font-bold leading-snug text-white transition-transform duration-500 ease-in-out md:text-xl lg:text-2xl group-hover:-translate-y-2">
+      {/* Title — slides up on hover */}
+      <div className="absolute inset-0 flex items-end justify-center p-6 pb-28 transition-all duration-500 group-hover:pb-36">
+        <h3 className="text-center text-lg font-bold text-white md:text-xl lg:text-2xl">
           {title}
         </h3>
       </div>
 
-      {/* Description (shows on hover) */}
+      {/* Description — slides up from bottom on hover */}
       {description && (
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 translate-y-6 opacity-0 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
-          {/* Content */}
-          <div className="bg-[#231F20] p-6 md:p-8 flex justify-end">
-            <p className="text-white text-sm md:text-base leading-relaxed">
-              {description}
-            </p>
+        <div className="absolute bottom-0 left-0 right-0 translate-y-full opacity-0 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+          <div className="bg-[#231F20] p-6">
+            <p className="text-sm text-white md:text-base">{description}</p>
           </div>
-          {/* Gradient bottom border */}
           <div className="h-[6px] w-full bg-[linear-gradient(180deg,#D0AA63_0%,#F0E0A0_45%,#D0AA63_100%)]" />
         </div>
       )}

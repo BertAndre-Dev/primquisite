@@ -67,7 +67,7 @@ export function Footer() {
                   key={item.label}
                   href={item.href}
                   aria-label={item.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDA74F] hover:bg-[#DDA74F]/10"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDA74F] transition-all duration-200 ease-out hover:bg-[#DDA74F]/10 hover:brightness-110 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DDA74F]/80"
                 >
                   <Image src={item.icon} alt="" width={18} height={18} />
                 </Link>
@@ -93,7 +93,10 @@ export function Footer() {
             <ul className="space-y-2 text-sm leading-6 text-[#D5CFC7]">
               {links.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-white">
+                  <Link
+                    href={item.href}
+                    className="transition-colors duration-200 ease-out hover:text-white"
+                  >
                     {item.label}
                   </Link>
                 </li>

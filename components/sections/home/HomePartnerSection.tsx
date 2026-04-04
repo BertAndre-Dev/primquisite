@@ -46,7 +46,7 @@ export function HomePartnerSection() {
 
                 <Link
                   href="/contact"
-                  className="mt-6 flex w-full items-center justify-center rounded-md bg-[#D0AA63] py-3 text-sm font-semibold text-white hover:opacity-90 md:text-base"
+                  className="mt-6 flex w-full items-center justify-center rounded-md bg-[#D0AA63] py-3 text-sm font-semibold text-white transition-all duration-200 ease-out hover:opacity-90 active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0E0A0]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent md:text-base"
                 >
                   Partner with us
                 </Link>

@@ -1,6 +1,7 @@
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactInfoGrid } from "@/components/contact/ContactInfoGrid";
 import { ContactQuoteForm } from "@/components/forms/ContactQuoteForm";
+import { StaggerMount } from "@/components/motion/StaggerMount";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div>
+    <StaggerMount>
       <ContactHero />
 
       <section className="bg-white px-4 py-14 md:px-6 md:py-20 lg:px-8">
@@ -25,6 +26,6 @@ export default function ContactPage() {
       <section className="bg-[#FAF9F6] px-4 pb-16 pt-4 md:px-6 md:pb-24 lg:px-8">
         <ContactQuoteForm />
       </section>
-    </div>
+    </StaggerMount>
   );
 }

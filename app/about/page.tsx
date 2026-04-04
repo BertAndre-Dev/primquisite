@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import { PortfolioContactSection } from "@/components/portfolio/PortfolioContactSection";
+import { StaggerMount } from "@/components/motion/StaggerMount";
 import { AboutCoreValuesSection } from "@/components/sections/about/AboutCoreValuesSection";
 import { AboutHeroSection } from "@/components/sections/about/AboutHeroSection";
 import { AboutMissionVisionSection } from "@/components/sections/about/AboutMissionVisionSection";
 import { AboutWhoWeAreSection } from "@/components/sections/about/AboutWhoWeAreSection";
-import { PortfolioContactSection } from "@/components/portfolio/PortfolioContactSection";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us | Primquisite Real Estate",
@@ -13,12 +14,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
+    <StaggerMount>
       <AboutHeroSection />
       <AboutWhoWeAreSection />
       <AboutMissionVisionSection />
       <AboutCoreValuesSection />
       <PortfolioContactSection />
-    </>
+    </StaggerMount>
   );
 }

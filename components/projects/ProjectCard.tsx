@@ -23,15 +23,15 @@ export function ProjectCard({
   return (
     <Link
       href={href}
-      className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4A35A]"
+      className="group block rounded-lg transition-transform duration-200 ease-out hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:ring-2 focus-visible:ring-[#D4A35A] focus-visible:ring-offset-2 focus-visible:outline-none"
     >
       <article>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-200 shadow-sm transition-shadow duration-300 group-hover:shadow-xl">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-200 shadow-sm transition-shadow duration-200 ease-out group-hover:shadow-xl">
           <Image
             src={imageSrc}
             alt={imageAlt ?? `${title} — ${location}`}
             fill
-            className="object-cover transition duration-500 group-hover:scale-[1.03]"
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
 

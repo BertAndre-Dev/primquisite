@@ -1,7 +1,11 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { CONTACT_INFO_ITEMS } from "@/constants/contact";
+import { EASE_OUT, staggerDelaySeconds } from "@/lib/motion";
 
-function ClockIcon({ className }: { className?: string }) {
+function ClockIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       className={className}
@@ -26,11 +30,24 @@ function ClockIcon({ className }: { className?: string }) {
 }
 
 export function ContactInfoGrid() {
+  const reduce = useReducedMotion();
+
   return (
     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-12">
-      {CONTACT_INFO_ITEMS.map((item) => (
-        <div key={item.id} className="flex gap-4">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-[#c5a367] text-white">
+      {CONTACT_INFO_ITEMS.map((item, i) => (
+        <motion.div
+          key={item.id}
+          className="flex gap-4"
+          initial={reduce ? false : { opacity: 0, y: 12 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{
+            duration: 0.4,
+            ease: EASE_OUT,
+            delay: reduce ? 0 : staggerDelaySeconds(i),
+          }}
+        >
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-[#c5a367] text-white transition-transform duration-200 ease-out motion-reduce:transition-none">
             {item.icon === "clock" ? (
               <ClockIcon className="h-7 w-7" />
             ) : (
@@ -49,7 +66,7 @@ export function ContactInfoGrid() {
             </p>
             <p className="mt-1 text-base font-normal text-black">{item.value}</p>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

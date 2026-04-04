@@ -29,7 +29,7 @@ export function HomeValueSection() {
 
             <Link
               href="/about"
-              className="mt-10 inline-flex items-center gap-2 rounded-md bg-[#D0AA63] border border-[#DDA74F] px-6 py-2 text-base font-semibold text-white hover:opacity-90"
+              className="mt-10 inline-flex items-center gap-2 rounded-md border border-[#DDA74F] bg-[#D0AA63] px-6 py-2 text-base font-semibold text-white transition-all duration-200 ease-out hover:opacity-90 active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0E0A0]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#231F20]"
             >
               Learn More {"\u2197"}
             </Link>

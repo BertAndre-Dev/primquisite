@@ -36,13 +36,13 @@ export function PortfolioProjectDetail({
     <section className="bg-white px-4 py-14 md:px-6 md:py-20 lg:px-8">
       <div className="mx-auto grid w-full max-w-7xl gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16">
         {/* Image — order-1 on mobile (top), order-1 on desktop (left) */}
-        <div className="relative order-1 overflow-hidden rounded-lg">
-          <div className="relative w-full h-[500px]">
+        <div className="group relative order-1 overflow-hidden rounded-lg">
+          <div className="relative h-[500px] w-full">
             <Image
               src={imageSrc}
               alt={imageAlt}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:group-hover:scale-100"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
@@ -84,7 +84,7 @@ export function PortfolioProjectDetail({
           </ul>
           <Link
             href="#"
-            className="mt-10 inline-flex w-fit items-center gap-2 rounded-md bg-[#CBA668] px-8 py-3.5 text-sm font-semibold text-white transition hover:opacity-95"
+            className="mt-10 inline-flex w-fit items-center gap-2 rounded-md bg-[#CBA668] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#CBA668]/70 focus-visible:ring-offset-2"
           >
             Read Project Brochure
             <Image

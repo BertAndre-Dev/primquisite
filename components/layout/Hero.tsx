@@ -1,13 +1,16 @@
 "use client";
 
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { HERO_SLIDES } from "@/constants/heroSlides";
+import { EASE_OUT } from "@/lib/motion";
 
 export function Hero() {
   const [index, setIndex] = useState(0);
   const total = HERO_SLIDES.length;
+  const reduce = useReducedMotion();
 
   const go = useCallback(
     (dir: -1 | 1) => {
@@ -21,53 +24,72 @@ export function Hero() {
     return () => window.clearInterval(id);
   }, [go]);
 
-  const slide = HERO_SLIDES[index];
+  const slide = HERO_SLIDES[index]!;
 
   return (
     <section className="relative min-h-[80svh] w-full overflow-hidden">
       <div className="absolute inset-0">
-        <Image
-          key={slide.image}
-          src={slide.image}
-          alt=""
-          fill
-          className="object-cover transition-opacity duration-700"
-          priority={index === 0}
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[#0a1628]/60" />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={slide.image}
+            className="absolute inset-0"
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={reduce ? undefined : { opacity: 0 }}
+            transition={{ duration: reduce ? 0 : 0.5, ease: EASE_OUT }}
+          >
+            <Image
+              src={slide.image}
+              alt=""
+              fill
+              className="object-cover"
+              priority={index === 0}
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[#0a1628]/60" />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <div className="relative z-10 flex min-h-[70svh] flex-col justify-end px-6 pb-24 pt-20 md:px-12 md:pb-28 lg:px-20 lg:pb-32">
-        <div className="mx-auto w-full max-w-7xl">
-          {slide.titleVariant === "beyond-brick" ? (
-            <h1 className="max-w-4xl text-4xl font-black uppercase leading-[1.05] tracking-[0.06em] text-white md:text-6xl lg:text-7xl">
-              BUILDING BEYOND BRICK
-            </h1>
-          ) : (
-            <h1 className="max-w-4xl text-3xl font-bold uppercase leading-[1.05] tracking-[0.1em] text-white md:text-5xl lg:text-6xl">
-              {slide.title}
-            </h1>
-          )}
-
-          <p className="mt-5 max-w-xl font-normal text-base leading-relaxed text-white md:text-[20px]">
-            {slide.subtitle}
-          </p>
-
-          <Link
-            href={slide.ctaHref}
-            className="mt-8 inline-flex rounded-md border-2 border-[#C8A168] px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-colors duration-200 hover:bg-[#C8A168]/20"
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            className="mx-auto w-full max-w-7xl"
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduce ? undefined : { opacity: 0, y: -12 }}
+            transition={{ duration: reduce ? 0 : 0.4, ease: EASE_OUT }}
           >
-            {slide.cta}
-          </Link>
-        </div>
+            {slide.titleVariant === "beyond-brick" ? (
+              <h1 className="max-w-4xl text-4xl font-black uppercase leading-[1.05] tracking-[0.06em] text-white md:text-6xl lg:text-7xl">
+                BUILDING BEYOND BRICK
+              </h1>
+            ) : (
+              <h1 className="max-w-4xl text-3xl font-bold uppercase leading-[1.05] tracking-[0.1em] text-white md:text-5xl lg:text-6xl">
+                {slide.title}
+              </h1>
+            )}
+
+            <p className="mt-5 max-w-xl font-normal text-base leading-relaxed text-white md:text-[20px]">
+              {slide.subtitle}
+            </p>
+
+            <Link
+              href={slide.ctaHref}
+              className="mt-8 inline-flex rounded-md border-2 border-[#C8A168] px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-all duration-200 ease-out hover:bg-[#C8A168]/20 active:scale-[0.98] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A168]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+            >
+              {slide.cta}
+            </Link>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <div className="absolute bottom-1 right-6 z-20 flex items-center gap-4 md:bottom-10 md:right-12">
         <button
           type="button"
           onClick={() => go(-1)}
-          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-white/70 text-white/80 transition hover:border-white hover:bg-white/10"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-white/70 text-white/80 transition-all duration-200 ease-out hover:border-white hover:bg-white/10 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
           aria-label="Previous slide"
         >
           <svg
@@ -90,7 +112,7 @@ export function Hero() {
         <button
           type="button"
           onClick={() => go(1)}
-          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#C8A168] text-[#C8A168] transition hover:bg-[#C8A168]/15"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#C8A168] text-[#C8A168] transition-all duration-200 ease-out hover:bg-[#C8A168]/15 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A168]/60"
           aria-label="Next slide"
         >
           <svg
@@ -118,7 +140,7 @@ export function Hero() {
             type="button"
             onClick={() => setIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-1 rounded-full transition-all duration-300 ${
+            className={`h-1 rounded-full transition-all duration-300 ease-out hover:opacity-90 active:scale-95 motion-reduce:active:scale-100 ${
               i === index
                 ? "w-6 bg-[#C8A168]"
                 : "w-2 bg-white/40 hover:bg-white/60"

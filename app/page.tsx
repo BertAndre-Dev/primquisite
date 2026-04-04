@@ -1,4 +1,5 @@
 import { Hero } from "@/components/layout/Hero";
+import { StaggerMount } from "@/components/motion/StaggerMount";
 import { HomeIntroSection } from "@/components/sections/home/HomeIntroSection";
 import { HomePartnerSection } from "@/components/sections/home/HomePartnerSection";
 import { HomeProjectsSection } from "@/components/sections/home/HomeProjectsSection";
@@ -8,7 +9,7 @@ import { HomeValueSection } from "@/components/sections/home/HomeValueSection";
 
 export default function Home() {
   return (
-    <div>
+    <StaggerMount>
       <Hero />
       <HomeValueSection />
       <HomeIntroSection />
@@ -16,6 +17,6 @@ export default function Home() {
       <HomeProjectsSection />
       <HomeSmarterPropertiesSection />
       <HomePartnerSection />
-    </div>
+    </StaggerMount>
   );
 }

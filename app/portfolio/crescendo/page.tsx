@@ -1,3 +1,4 @@
+import { StaggerMount } from "@/components/motion/StaggerMount";
 import { PortfolioContactSection } from "@/components/portfolio/PortfolioContactSection";
 import { PortfolioProjectDetail } from "@/components/portfolio/PortfolioProjectDetail";
 import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHero";
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function CrescendoPortfolioPage() {
   return (
-    <>
+    <StaggerMount>
       <PortfolioProjectHero
         heading="PORTFOLIO - CRESCENDO"
         subtitle="Premium residential projects across prime Lagos locations, designed for quality, community, and long-term value."
@@ -47,6 +48,6 @@ export default function CrescendoPortfolioPage() {
       />
       <ProjectGalleryCarousel images={CRESCENDO_GALLERY} />
       <PortfolioContactSection />
-    </>
+    </StaggerMount>
   );
 }

@@ -212,7 +212,7 @@ export function ProjectGalleryCarousel({
             type="button"
             onClick={prev}
             disabled={animating}
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition hover:bg-[#D9A85F]/10 disabled:opacity-50 cursor-pointer"
+            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition-all duration-200 ease-out hover:bg-[#D9A85F]/10 active:scale-[0.96] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/50"
             aria-label="Previous image"
           >
             <Image src="/icons/arrow-left.svg" alt="Previous image" width={24} height={24} />
@@ -221,7 +221,7 @@ export function ProjectGalleryCarousel({
             type="button"
             onClick={next}
             disabled={animating}
-            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition hover:opacity-95 disabled:opacity-50 cursor-pointer"
+            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.96] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/60"
             aria-label="Next image"
           >
             <Image src="/icons/arrow-right.svg" alt="Next image" width={24} height={24} />

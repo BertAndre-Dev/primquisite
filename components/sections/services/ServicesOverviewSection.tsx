@@ -1,51 +1,66 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import { EASE_OUT, staggerDelaySeconds } from "@/lib/motion";
 
 export function ServicesOverviewSection() {
   return (
     <div className="bg-white">
       <div className="mx-auto w-full max-w-7xl px-4 py-14 md:px-6 md:py-20 lg:px-8">
         <div className="space-y-16">
-          <ServiceBlock
-            title="Property Development & Investment"
-            imageSrc="/services/property.svg"
-            description="We develop and co-develop premium residential and commercial properties across prime locations. Scope includes:"
-            bullets={[
-              "Site identification",
-              "Feasibility analysis",
-              "Land acquisition",
-              "Design & construction",
-              "Project delivery",
-            ]}
-          />
+          <ScrollReveal>
+            <ServiceBlock
+              title="Property Development & Investment"
+              imageSrc="/services/property.svg"
+              description="We develop and co-develop premium residential and commercial properties across prime locations. Scope includes:"
+              bullets={[
+                "Site identification",
+                "Feasibility analysis",
+                "Land acquisition",
+                "Design & construction",
+                "Project delivery",
+              ]}
+            />
+          </ScrollReveal>
 
-          <ServiceBlock
-            title="PropTech & Digital Property Management"
-            description="We deployed Berta Hub to transform estate operations and resident experience."
-            imageSrc="/services/proptech.svg"
-            imageAlt="Residential building with clear compliance details"
-          />
+          <ScrollReveal delay={0.08}>
+            <ServiceBlock
+              title="PropTech & Digital Property Management"
+              description="We deployed Berta Hub to transform estate operations and resident experience."
+              imageSrc="/services/proptech.svg"
+              imageAlt="Residential building with clear compliance details"
+            />
+          </ScrollReveal>
 
-          <ServiceBlock
-            title="Operations & Asset Management"
-            description="We manage estates post-handover to ensure efficiency, performance, and long-term value retention."
-            imageSrc="/services/operations.svg"
-            imageAlt="Residential development with data analytics overlay"
-          />
+          <ScrollReveal delay={0.12}>
+            <ServiceBlock
+              title="Operations & Asset Management"
+              description="We manage estates post-handover to ensure efficiency, performance, and long-term value retention."
+              imageSrc="/services/operations.svg"
+              imageAlt="Residential development with data analytics overlay"
+            />
+          </ScrollReveal>
 
-          <ServiceBlock
-            title="Risk, Transparency & Compliance"
-            description="We ensure structured processes, clear documentation, and full visibility across all stakeholders."
-            imageSrc="/services/risk.svg"
-            imageAlt="Estate operations and asset management overview"
-          />
+          <ScrollReveal delay={0.16}>
+            <ServiceBlock
+              title="Risk, Transparency & Compliance"
+              description="We ensure structured processes, clear documentation, and full visibility across all stakeholders."
+              imageSrc="/services/risk.svg"
+              imageAlt="Estate operations and asset management overview"
+            />
+          </ScrollReveal>
 
-          <ServiceBlock
-            title="Enterprise Data & Intelligence"
-            description="We provide actionable insights across properties, operations, and residents to support better decision-making."
-            imageSrc="/services/enterprise.svg"
-            imageAlt="Digital estate management platform interface"
-          />
+          <ScrollReveal delay={0.2}>
+            <ServiceBlock
+              title="Enterprise Data & Intelligence"
+              description="We provide actionable insights across properties, operations, and residents to support better decision-making."
+              imageSrc="/services/enterprise.svg"
+              imageAlt="Digital estate management platform interface"
+            />
+          </ScrollReveal>
         </div>
       </div>
 
@@ -62,6 +77,7 @@ function ServiceBlock(props: {
   imageAlt?: string;
 }) {
   const { title, description, bullets, imageSrc, imageAlt } = props;
+  const reduce = useReducedMotion();
 
   return (
     <section className="w-full">
@@ -72,20 +88,32 @@ function ServiceBlock(props: {
 
       {bullets ? (
         <ul className="mt-6 list-disc space-y-2 pl-6 text-base text-neutral-800 md:text-lg">
-          {bullets.map((b) => (
-            <li key={b}>{b}</li>
+          {bullets.map((b, i) => (
+            <motion.li
+              key={b}
+              initial={reduce ? false : { opacity: 0, x: -6 }}
+              whileInView={reduce ? undefined : { opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{
+                duration: 0.32,
+                ease: EASE_OUT,
+                delay: reduce ? 0 : staggerDelaySeconds(i, 40, 240),
+              }}
+            >
+              {b}
+            </motion.li>
           ))}
         </ul>
       ) : null}
 
       {imageSrc ? (
-        <div className="mt-6 w-full overflow-hidden rounded-lg border border-black/5 bg-white/70">
+        <div className="group mt-6 w-full overflow-hidden rounded-lg border border-black/5 bg-white/70">
           <div className="relative h-[260px] w-full md:h-[300px]">
             <Image
               src={imageSrc}
               alt={imageAlt ?? title}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:group-hover:scale-100"
               sizes="(max-width: 768px) 100vw, 80vw"
             />
           </div>
@@ -96,6 +124,7 @@ function ServiceBlock(props: {
 }
 
 function WhoWeServeSection() {
+  const reduce = useReducedMotion();
   const cards = [
     {
       title: "Property Developers & Landowners",
@@ -118,15 +147,32 @@ function WhoWeServeSection() {
   return (
     <section className="bg-[#231F20] px-4 py-16 md:px-6 md:py-20 lg:px-8">
       <div className="mx-auto w-full max-w-7xl">
-        <h2 className="text-2xl font-bold text-white md:text-3xl">
+        <motion.h2
+          className="text-2xl font-bold text-white md:text-3xl"
+          initial={reduce ? false : { opacity: 0, y: 10 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.4, ease: EASE_OUT }}
+        >
           Who We Serve
-        </h2>
+        </motion.h2>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {cards.map((card) => (
-            <div
+          {cards.map((card, i) => (
+            <motion.div
               key={card.title}
-              className="rounded-md px-4 py-6 text-white/90 backdrop-blur"
+              className="rounded-md px-4 py-6 text-white/90 backdrop-blur transition-[transform,background-color] duration-200 ease-out hover:bg-white/5 motion-reduce:transition-none"
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{
+                duration: 0.4,
+                ease: EASE_OUT,
+                delay: reduce ? 0 : staggerDelaySeconds(i),
+              }}
+              whileHover={
+                reduce ? undefined : { y: -2, transition: { duration: 0.2 } }
+              }
             >
               <div className="flex items-start gap-3">
                 <WhoServeIcon />
@@ -136,17 +182,27 @@ function WhoWeServeSection() {
                   </h3>
                 </div>
               </div>
-              <p className="mt-4 text-[14px] md:text-base leading-6 text-white/70">{card.text}</p>
-            </div>
+              <p className="mt-4 text-[14px] leading-6 text-white/70 md:text-base">
+                {card.text}
+              </p>
+            </motion.div>
           ))}
         </div>
 
         <div className="mt-10 flex justify-center">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-md bg-[#D0AA63] px-10 py-3 text-sm font-semibold text-white hover:opacity-95"
+            className="inline-flex items-center rounded-md bg-[#D0AA63] px-10 py-3 text-sm font-semibold text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0E0A0]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#231F20]"
           >
-            Get in touch <span aria-hidden className="ml-2 cursor-pointer"><Image src="/arrow_outward.svg" alt="Arrow right" width={24} height={24} /></span>
+            Get in touch{" "}
+            <span aria-hidden className="ml-2 cursor-pointer">
+              <Image
+                src="/arrow_outward.svg"
+                alt="Arrow right"
+                width={24}
+                height={24}
+              />
+            </span>
           </Link>
         </div>
       </div>
@@ -155,12 +211,8 @@ function WhoWeServeSection() {
 }
 
 function WhoServeIcon() {
-  // Simple gold icon block approximating the icon in the screenshot.
   return (
-    <span
-      className="mt-1"
-      aria-hidden
-    >
+    <span className="mt-1" aria-hidden>
       <Image src="/house.svg" alt="Building" width={24} height={24} />
     </span>
   );

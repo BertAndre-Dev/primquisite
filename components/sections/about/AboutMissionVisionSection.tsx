@@ -146,7 +146,7 @@ export function AboutMissionVisionSection() {
         <button
           type="button"
           onClick={prev}
-          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition hover:bg-[#D9A85F]/10"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition-all duration-200 ease-out hover:bg-[#D9A85F]/10 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/50"
           aria-label="Previous slide"
         >
           <Image src="/icons/arrow-left.svg" alt="" width={24} height={24} />
@@ -154,7 +154,7 @@ export function AboutMissionVisionSection() {
         <button
           type="button"
           onClick={next}
-          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition hover:bg-[#D9A85F]/10"
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/60"
           aria-label="Next slide"
         >
           <Image src="/icons/arrow-right.svg" alt="" width={24} height={24} />
