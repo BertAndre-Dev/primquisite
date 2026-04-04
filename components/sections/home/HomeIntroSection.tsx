@@ -3,11 +3,11 @@ import Image from "next/image";
 export function HomeIntroSection() {
   return (
     <section className="bg-[#f2f2f2]">
-      <div className="mx-auto grid w-full items-center md:grid-cols-2 my-10">
+      <div className="mx-auto grid w-full items-center lg:grid-cols-2 my-10">
         {/* Image — flush left, no padding */}
-        <div className="relative h-[320px] w-full md:h-[620px]">
+        <div className="relative h-[420px] w-full md:h-[620px]">
           <Image
-            src="/images/landing/why.svg"
+            src="/frame.svg"
             alt="Modern residential building exterior"
             fill
             className="object-contain"
@@ -16,7 +16,7 @@ export function HomeIntroSection() {
         </div>
 
         {/* Text — padded only on the right column */}
-        <div className="px-4 py-10 md:px-8 md:py-0">
+        <div className="px-4 pb-10 py-0 md:pb-5 md:px-8 md:py-0">
           <p className="text-base font-semibold uppercase tracking-wide text-black">
             Here is why you should choose
           </p>

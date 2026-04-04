@@ -6,7 +6,7 @@ export function HomeSmarterPropertiesSection() {
       <div className="relative mx-auto h-[360px] w-full md:h-[460px] lg:h-[520px]">
         {/* Background photo */}
         <Image
-          src="/bg.svg"
+          src="/fram.svg"
           alt="Berta platform and real estate background"
           fill
           className="object-cover object-center"

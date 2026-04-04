@@ -83,7 +83,7 @@ export function ContactQuoteForm() {
           <button
             type="submit"
             disabled={state === "submitting"}
-            className="w-[65%] min-w-[200px] max-w-md rounded-md border-0 bg-[#CBA35C] px-4 py-4 text-base font-medium text-white transition hover:opacity-95 disabled:opacity-60"
+            className="w-[65%] min-w-[200px] max-w-md rounded-md border-0 bg-[#CBA35C] px-4 py-4 text-base font-medium text-white transition hover:opacity-95 disabled:opacity-60 cursor-pointer"
           >
             {state === "submitting" ? "Sending..." : "Submit"}
           </button>
