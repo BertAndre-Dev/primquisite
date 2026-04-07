@@ -1,22 +1,29 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 export function HomeIntroSection() {
   return (
-    <section className="bg-[#f2f2f2]">
-      <div className="mx-auto grid w-full items-center lg:grid-cols-2 my-10">
-        {/* Image — flush left, no padding */}
-        <div className="relative h-[420px] w-full md:h-[620px]">
-          <Image
+    <section className="bg-[#f2f2f2] my-30">
+      <div className="mx-auto grid w-full items-stretch lg:grid-cols-2">
+        {/* Image — flush left, full height */}
+        <div className="relative w-full overflow-hidden min-h-[550px]">
+          <img
             src="/frame.svg"
             alt="Modern residential building exterior"
-            fill
-            className="object-contain"
-            priority={false}
+            className="h-full w-full object-cover"
           />
+
+          {/* Logo overlay — top left */}
+          <div className="bg-[#231F20] absolute top-0 left-0">
+            <img
+              src="/logo.svg"
+              alt="Primquisite logo"
+              className="h-34 w-34 object-contain mx-auto"
+            />
+          </div>
         </div>
 
-        {/* Text — padded only on the right column */}
-        <div className="px-4 pb-10 py-0 md:pb-5 md:px-8 md:py-0">
+        {/* Text */}
+        <div className="px-8 py-16 md:px-12 md:py-20">
           <p className="text-base font-semibold uppercase tracking-wide text-black">
             Here is why you should choose
           </p>
