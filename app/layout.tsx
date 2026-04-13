@@ -7,7 +7,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { CookieBanner } from "@/components/legal/CookieBanner";
 import { GA_MEASUREMENT_ID } from "@/lib/gtag";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+// import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -83,7 +84,7 @@ export default function RootLayout({
               })}
             </Script>
             <Suspense fallback={null}>
-              <GoogleAnalytics />
+              <GoogleAnalytics gaId="G-CMXBY1MG8B"  />
             </Suspense>
           </>
         ) : null}
