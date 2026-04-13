@@ -40,7 +40,7 @@ export function Hero() {
           >
             <Image
               src={slide.image}
-              alt=""
+              alt={`Hero background — ${slide.title}`}
               fill
               className="object-cover"
               priority={index === 0}

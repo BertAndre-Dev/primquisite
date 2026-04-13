@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cookie Notice & Policy | BertAndre Consulting Limited",
-  description: "Cookie Notice & Policy for BertAndre Consulting Limited.",
+  title: "Cookie Notice & Policy | Primquisite Real Estate",
+  description: "Cookie Notice & Policy for Primquisite Real Estate.",
 };
 
 export default function CookieNoticePolicyPage() {

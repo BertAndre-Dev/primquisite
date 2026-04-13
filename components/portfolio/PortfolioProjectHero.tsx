@@ -20,7 +20,7 @@ export function PortfolioProjectHero({
       <div className="absolute inset-0 z-0">
         <Image
           src={backgroundImage}
-          alt=""
+          alt={`${heading} — hero background`}
           fill
           className="object-cover"
           priority

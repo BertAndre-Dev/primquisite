@@ -53,10 +53,11 @@ export function ContactInfoGrid() {
             ) : (
               <Image
                 src={item.icon}
-                alt=""
+                alt={`${item.label} icon`}
                 width={28}
                 height={28}
                 className="h-7 w-7 brightness-0 invert"
+                loading="lazy"
               />
             )}
           </div>

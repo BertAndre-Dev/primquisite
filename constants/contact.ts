@@ -16,7 +16,7 @@ export const CONTACT_INFO_ITEMS: ContactInfoItem[] = [
   {
     id: "email",
     label: "Email:",
-    value: "info@primquisite.com",
+    value: "info@primquisiterealestate.com",
     icon: "/icons/email.svg",
   },
   {

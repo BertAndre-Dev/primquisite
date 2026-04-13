@@ -35,7 +35,7 @@ export function Footer() {
             priority={false}
           />
           <div className="flex flex-col">
-            <h1 className="text-2xl font-bold uppercase">Primquisite</h1>
+            <p className="text-2xl font-bold uppercase">Primquisite</p>
             <p className="text-sm text-[#D5CFC7] uppercase">Real Estate</p>
           </div>
         </div>
@@ -47,15 +47,33 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 text-sm leading-6 text-[#D5CFC7]">
               <li className="flex items-start gap-3">
-                <Image src="/icons/office.svg" alt="" width={16} height={22} />
+                <Image
+                  src="/icons/office.svg"
+                  alt="Office location icon"
+                  width={16}
+                  height={22}
+                  loading="lazy"
+                />
                 <span>20 Awudu Ekpekha Blvd, Lekki Phase 1, Lagos Nigeria.</span>
               </li>
               <li className="flex items-center gap-3">
-                <Image src="/icons/email.svg" alt="" width={16} height={22} />
-                <span>Email: info@primquisite.com</span>
+                <Image
+                  src="/icons/email.svg"
+                  alt="Email icon"
+                  width={16}
+                  height={22}
+                  loading="lazy"
+                />
+                <span>Email: info@primquisiterealestate.com</span>
               </li>
               <li className="flex items-center gap-3">
-                <Image src="/icons/phone.svg" alt="" width={16} height={22} />
+                <Image
+                  src="/icons/phone.svg"
+                  alt="Phone icon"
+                  width={16}
+                  height={22}
+                  loading="lazy"
+                />
                 <span>Phone: +234 913 866 7927</span>
               </li>
             </ul>
@@ -69,7 +87,13 @@ export function Footer() {
                   aria-label={item.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDA74F] transition-all duration-200 ease-out hover:bg-[#DDA74F]/10 hover:brightness-110 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DDA74F]/80"
                 >
-                  <Image src={item.icon} alt="" width={18} height={18} />
+                  <Image
+                    src={item.icon}
+                    alt={`${item.label} icon`}
+                    width={18}
+                    height={18}
+                    loading="lazy"
+                  />
                 </Link>
               ))}
             </div>

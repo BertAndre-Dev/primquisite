@@ -1,0 +1,17 @@
+Primquisite Real Estate
+
+This site describes Primquisite Real Estate’s services and portfolio of projects.
+
+Primary pages:
+- / (Home)
+- /about
+- /services
+- /portfolio
+- /contact
+
+Legal:
+- /privacy-notice
+- /cookie-notice-policy
+
+Last updated: 2026-04-08
+

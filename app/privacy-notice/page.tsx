@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Notice | BertAndre Consulting Limited",
-  description: "Privacy Notice for BertAndre Consulting Limited.",
+  title: "Privacy Notice | Primquisite Real Estate",
+  description: "Privacy Notice for Primquisite Real Estate.",
 };
 
 export default function PrivacyNoticePage() {

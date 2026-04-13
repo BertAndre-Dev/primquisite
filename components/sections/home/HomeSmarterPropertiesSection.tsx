@@ -10,6 +10,8 @@ export function HomeSmarterPropertiesSection() {
           alt="Berta platform and real estate background"
           fill
           className="object-cover object-center"
+          loading="lazy"
+          sizes="100vw"
         />
 
         {/* Dark left panel with diagonal clip */}
@@ -21,11 +23,12 @@ export function HomeSmarterPropertiesSection() {
             {/* Faint logo watermark */}
             <Image
               src="/logo.svg"
-              alt=""
+              alt="Primquisite Real Estate logo watermark"
               width={400}
               height={400}
               aria-hidden
               className="absolute left-1/2 top-1/2 z-0 h-auto w-56 -translate-x-1/2 -translate-y-1/2 opacity-[0.07] md:w-80"
+              loading="lazy"
             />
 
             <div className="relative z-10 max-w-lg text-white">

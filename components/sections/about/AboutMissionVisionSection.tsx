@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
@@ -12,7 +13,13 @@ const AUTOPLAY_MS = 6000;
 function MissionVisionIcon() {
   return (
     <div className="relative h-10 w-10 shrink-0 md:h-12 md:w-12">
-      <Image src="/icons/vission.svg" alt="" fill className="object-contain" />
+      <Image
+        src="/icons/vission.svg"
+        alt="Primquisite icon"
+        fill
+        className="object-contain"
+        loading="lazy"
+      />
     </div>
   );
 }
@@ -79,6 +86,7 @@ export function AboutMissionVisionSection() {
   const [index, setIndex] = useState(0);
   const total = ABOUT_CAROUSEL_SLIDES.length;
   const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const reduce = useReducedMotion();
 
   const clearAutoplay = useCallback(() => {
     if (autoplayRef.current) {
@@ -117,15 +125,19 @@ export function AboutMissionVisionSection() {
       aria-label="Mission, vision, and approach"
     >
       <div className="overflow-hidden">
-        <div
+        <motion.div
           className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
-          style={{ transform: `translateX(-${index * 100}%)` }}
+          animate={{ x: `-${index * 100}%` }}
+          transition={
+            reduce
+              ? { duration: 0 }
+              : { duration: 0.5, ease: [0, 0, 0.2, 1] }
+          }
         >
-          {ABOUT_CAROUSEL_SLIDES.map((slide, slideIndex) => (
+          {ABOUT_CAROUSEL_SLIDES.map((slide) => (
             <div
               key={slide.id}
               className="grid min-h-[420px] w-full shrink-0 grid-cols-1 md:min-h-[480px] md:grid-cols-2"
-              aria-hidden={slideIndex !== index}
             >
               <div className="relative min-h-[280px] w-full md:min-h-full">
                 <Image
@@ -149,7 +161,13 @@ export function AboutMissionVisionSection() {
           className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition-all duration-200 ease-out hover:bg-[#D9A85F]/10 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/50"
           aria-label="Previous slide"
         >
-          <Image src="/icons/arrow-left.svg" alt="" width={24} height={24} />
+          <Image
+            src="/icons/arrow-left.svg"
+            alt="Previous slide"
+            width={24}
+            height={24}
+            loading="lazy"
+          />
         </button>
         <button
           type="button"
@@ -157,14 +175,19 @@ export function AboutMissionVisionSection() {
           className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/60"
           aria-label="Next slide"
         >
-          <Image src="/icons/arrow-right.svg" alt="" width={24} height={24} />
+          <Image
+            src="/icons/arrow-right.svg"
+            alt="Next slide"
+            width={24}
+            height={24}
+            loading="lazy"
+          />
         </button>
       </div>
               </div>
             </div>
           ))}
-          
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 
 export function HomeIntroSection() {
   return (
@@ -6,18 +6,24 @@ export function HomeIntroSection() {
       <div className="mx-auto grid w-full items-stretch lg:grid-cols-2">
         {/* Image — flush left, full height */}
         <div className="relative w-full overflow-hidden min-h-[550px]">
-          <img
+          <Image
             src="/frame.svg"
             alt="Modern residential building exterior"
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            loading="lazy"
           />
 
           {/* Logo overlay — top left */}
           <div className="bg-[#231F20] absolute top-0 left-0">
-            <img
+            <Image
               src="/logo.svg"
-              alt="Primquisite logo"
+              alt="Primquisite Real Estate logo"
+              width={136}
+              height={136}
               className="h-34 w-34 object-contain mx-auto"
+              loading="lazy"
             />
           </div>
         </div>

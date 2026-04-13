@@ -10,7 +10,7 @@ export function AboutHeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src={HERO_FIRST_SLIDE_IMAGE}
-          alt=""
+          alt="About Primquisite Real Estate — building background"
           fill
           className="object-cover"
           priority
