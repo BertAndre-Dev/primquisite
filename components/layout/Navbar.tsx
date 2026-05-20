@@ -42,7 +42,11 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[#231F20]/55 backdrop-blur-sm">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 md:px-6 lg:px-8">
+      <nav
+        className={`mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 md:px-6 lg:px-8 ${
+          open ? "relative z-[101]" : ""
+        }`}
+      >
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3 transition-opacity duration-200 ease-out hover:opacity-90 active:scale-[0.98] motion-reduce:active:scale-100"
@@ -136,46 +140,40 @@ export function Navbar() {
             transition={{ duration: 0.22, ease: EASE_OUT }}
           >
             <motion.div
-              className="mx-auto flex h-full w-full max-w-7xl flex-col px-6 pb-10 pt-24"
+              className="mx-auto flex h-full w-full max-w-7xl flex-col px-4 pb-10 pt-24 sm:px-6"
               initial={reduce ? false : { opacity: 0, y: 14 }}
               animate={reduce ? false : { opacity: 1, y: 0 }}
               exit={reduce ? undefined : { opacity: 0, y: 10 }}
               transition={{ duration: 0.32, ease: EASE_OUT, delay: reduce ? 0 : 0.04 }}
             >
-              <ul className="flex flex-col gap-6">
-                {navLinks.map((link) => {
-                  const active = isActive(pathname, link.href);
-                  return (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className={`text-base font-semibold uppercase tracking-[0.2em] transition-colors duration-200 ease-out ${
-                          active ? "text-[#C8A168]" : "text-white hover:text-[#C8A168]/90"
-                        }`}
-                        onClick={() => setOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
+              <div className="flex flex-col rounded-lg border border-[#C8A168]/20 bg-black p-4">
+                <ul className="flex w-full flex-col gap-6">
+                  {navLinks.map((link) => {
+                    const active = isActive(pathname, link.href);
+                    return (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`text-base font-semibold uppercase tracking-[0.2em] transition-colors duration-200 ease-out ${
+                            active ? "text-[#C8A168]" : "text-white hover:text-[#C8A168]/90"
+                          }`}
+                          onClick={() => setOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
 
-              <Link
-                href="/contact"
-                className="mt-10 inline-flex w-full justify-center border border-white px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 ease-out hover:bg-white/10 active:scale-[0.98] motion-reduce:active:scale-100"
-                onClick={() => setOpen(false)}
-              >
-                Send us a message
-              </Link>
-
-              <button
-                type="button"
-                className="mt-auto inline-flex w-full justify-center rounded border border-white/40 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 ease-out hover:bg-white/10 active:scale-[0.98] motion-reduce:active:scale-100"
-                onClick={() => setOpen(false)}
-              >
-                Close
-              </button>
+                <Link
+                  href="/contact"
+                  className="mt-10 inline-flex w-full justify-center rounded-md border border-white px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 ease-out hover:bg-white/10 active:scale-[0.98] motion-reduce:active:scale-100"
+                  onClick={() => setOpen(false)}
+                >
+                  Send us a message
+                </Link>
+              </div>
             </motion.div>
           </motion.div>
         ) : null}
