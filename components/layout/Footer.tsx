@@ -17,9 +17,26 @@ const links = [
 ];
 
 const socialLinks = [
-  { href: "#", icon: "/icons/instagram.svg", label: "Instagram" },
-  { href: "#", icon: "/icons/linkdln.svg", label: "LinkedIn" },
-  { href: "#", icon: "/icons/facebook.svg", label: "Facebook" },
+  {
+    href: "https://www.instagram.com/primquisite_realestate?igsh=MTV0anhtYzl4ODJxNw==",
+    icon: "/icons/instagram.svg",
+    label: "Instagram",
+  },
+  {
+    href: "https://www.tiktok.com/@primquisiterealestate?_r=1&_t=ZS-91fes2giTju",
+    icon: "/icons/tiktok.svg",
+    label: "TikTok",
+  },
+  {
+    href: "https://www.linkedin.com/company/primquisite-real-estae/",
+    icon: "/icons/linkdln.svg",
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.facebook.com/share/14RzBtLxoV4/?mibextid=wwXIfr",
+    icon: "/icons/facebook.svg",
+    label: "Facebook",
+  },
 ];
 
 export function Footer() {
@@ -81,9 +98,11 @@ export function Footer() {
             <p className="mt-5 text-sm text-[#D5CFC7]">Follow us:</p>
             <div className="mt-3 flex items-center gap-3">
               {socialLinks.map((item) => (
-                <Link
+                <a
                   key={item.label}
                   href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={item.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDA74F] transition-all duration-200 ease-out hover:bg-[#DDA74F]/10 hover:brightness-110 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DDA74F]/80"
                 >
@@ -94,7 +113,7 @@ export function Footer() {
                     height={18}
                     loading="lazy"
                   />
-                </Link>
+                </a>
               ))}
             </div>
           </section>
