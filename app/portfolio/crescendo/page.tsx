@@ -5,7 +5,7 @@ import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHer
 import { ProjectGalleryCarousel } from "@/components/portfolio/ProjectGalleryCarousel";
 import { HERO_FIRST_SLIDE_IMAGE } from "@/constants/heroSlides";
 import { Cormorant_Garamond } from "next/font/google";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -19,11 +19,17 @@ const CRESCENDO_GALLERY = [
   { src: "/cresendo/cres4.jpeg", alt: "Community and amenities" },
 ];
 
-export const metadata: Metadata = {
-  title: "Portfolio — Crescendo | Primquisite Real Estate",
+export const metadata = createPageMetadata({
+  title: "Portfolio — Crescendo",
   description:
-    "Crescendo — premium residential development in Lekki by Primquisite Real Estate.",
-};
+    "Crescendo — premium luxury residential development in Lekki Phase 1, Lagos by Primquisite Real Estate, a leading property developer in Nigeria.",
+  path: "/portfolio/crescendo",
+  keywords: [
+    "Lekki Phase 1 real estate",
+    "luxury homes Lekki Lagos",
+    "property developers in Lagos",
+  ],
+});
 
 export default function CrescendoPortfolioPage() {
   return (

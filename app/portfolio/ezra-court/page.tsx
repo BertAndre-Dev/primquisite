@@ -4,7 +4,7 @@ import { PortfolioProjectDetail } from "@/components/portfolio/PortfolioProjectD
 import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHero";
 import { ProjectGalleryCarousel } from "@/components/portfolio/ProjectGalleryCarousel";
 import { Cormorant_Garamond } from "next/font/google";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -18,11 +18,17 @@ const EZRA_GALLERY = [
   { src: "/ezra/ezra-4.jpeg", alt: "Residential amenities" },
 ];
 
-export const metadata: Metadata = {
-  title: "Portfolio — Ezra Court | Primquisite Real Estate",
+export const metadata = createPageMetadata({
+  title: "Portfolio — Ezra Court",
   description:
-    "Ezra Court — premium residential community in Lekki by Primquisite Real Estate.",
-};
+    "Ezra Court — premium luxury residential community in Lekki, Lagos by Primquisite Real Estate, a trusted property developer in Nigeria.",
+  path: "/portfolio/ezra-court",
+  keywords: [
+    "Lekki real estate",
+    "luxury homes Lekki Lagos",
+    "property developers in Lagos",
+  ],
+});
 
 export default function EzraCourtPortfolioPage() {
   return (

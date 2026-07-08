@@ -1,6 +1,13 @@
 Primquisite Real Estate
 
-This site describes Primquisite Real Estate’s services and portfolio of projects.
+Primquisite Real Estate is a property developer and real estate agency in Lagos, Nigeria. We develop luxury residential projects, provide property management, and serve investors and residents across Lekki Phase 1, Ikoyi, and Nigeria.
+
+Primary services:
+- Property development and investment
+- PropTech and digital estate management
+- Operations and asset management
+- Risk, transparency, and compliance
+- Enterprise data and intelligence
 
 Primary pages:
 - / (Home)
@@ -9,9 +16,19 @@ Primary pages:
 - /portfolio
 - /contact
 
+Portfolio projects:
+- /portfolio/arabella (Lekki Phase 1)
+- /portfolio/crescendo (Lekki Phase 1)
+- /portfolio/ezra-court (Lekki)
+- /portfolio/nacre (Ikoyi)
+
+Contact:
+- Email: info@primquisiterealestate.com
+- Phone: +234 913 866 7927
+- Address: 20 Awudu Ekpheka Blvd, Lekki Phase 1, Lagos Nigeria
+
 Legal:
 - /privacy-notice
 - /cookie-notice-policy
 
-Last updated: 2026-04-08
-
+Last updated: 2026-07-08

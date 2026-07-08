@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Notice | Primquisite Real Estate",
-  description: "Privacy Notice for Primquisite Real Estate.",
-};
+export const metadata = createPageMetadata({
+  title: "Privacy Notice",
+  description:
+    "Privacy Notice for Primquisite Real Estate — how we collect, use, and protect personal data for clients and visitors in Nigeria.",
+  path: "/privacy-notice",
+});
 
 export default function PrivacyNoticePage() {
   return (

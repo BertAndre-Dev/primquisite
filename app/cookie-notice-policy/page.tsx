@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cookie Notice & Policy | Primquisite Real Estate",
-  description: "Cookie Notice & Policy for Primquisite Real Estate.",
-};
+export const metadata = createPageMetadata({
+  title: "Cookie Notice & Policy",
+  description:
+    "Cookie Notice and Policy for Primquisite Real Estate — how cookies are used on our website.",
+  path: "/cookie-notice-policy",
+});
 
 export default function CookieNoticePolicyPage() {
   return (

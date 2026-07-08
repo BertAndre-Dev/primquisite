@@ -2,12 +2,19 @@ import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactInfoGrid } from "@/components/contact/ContactInfoGrid";
 import { ContactQuoteForm } from "@/components/forms/ContactQuoteForm";
 import { StaggerMount } from "@/components/motion/StaggerMount";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact | Primquisite Real Estate",
-  description: "Reach out to Primquisite Real Estate — visit us or leave a message.",
-};
+export const metadata = createPageMetadata({
+  title: "Contact",
+  description:
+    "Contact Primquisite Real Estate in Lekki Phase 1, Lagos — speak with our real estate agents about property development, investment, and management across Nigeria.",
+  path: "/contact",
+  keywords: [
+    "real estate agents in Lagos",
+    "contact property developer Lagos",
+    "Lekki Phase 1 real estate",
+  ],
+});
 
 export default function ContactPage() {
   return (

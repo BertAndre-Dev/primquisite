@@ -4,7 +4,7 @@ import { PortfolioProjectDetail } from "@/components/portfolio/PortfolioProjectD
 import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHero";
 import { ProjectGalleryCarousel } from "@/components/portfolio/ProjectGalleryCarousel";
 import { Cormorant_Garamond } from "next/font/google";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -17,11 +17,17 @@ const ARABELLA_GALLERY = [
   { src: "/images/landing/partner.svg", alt: "Lifestyle and community" },
 ];
 
-export const metadata: Metadata = {
-  title: "Portfolio — Arabella | Primquisite Real Estate",
+export const metadata = createPageMetadata({
+  title: "Portfolio — Arabella",
   description:
-    "Arabella — premium residential development in Lekki Phase 1 by Primquisite Real Estate.",
-};
+    "Arabella — premium luxury residential development in Lekki Phase 1, Lagos by Primquisite Real Estate, a leading Nigerian property developer.",
+  path: "/portfolio/arabella",
+  keywords: [
+    "Lekki Phase 1 real estate",
+    "luxury homes Lekki Lagos",
+    "residential development Lagos",
+  ],
+});
 
 export default function ArabellaPortfolioPage() {
   return (

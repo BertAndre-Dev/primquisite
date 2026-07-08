@@ -5,7 +5,7 @@ import { ProjectGalleryCarousel } from "@/components/portfolio/ProjectGalleryCar
 import { StaggerMount } from "@/components/motion/StaggerMount";
 import { HERO_FIRST_SLIDE_IMAGE } from "@/constants/heroSlides";
 import { Cormorant_Garamond } from "next/font/google";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -18,11 +18,17 @@ const NACRE_GALLERY = [
   { src: "/images/landing/partner.svg", alt: "Development view" },
 ];
 
-export const metadata: Metadata = {
-  title: "Portfolio — Nacre | Primquisite Real Estate",
+export const metadata = createPageMetadata({
+  title: "Portfolio — Nacre",
   description:
-    "Premium residential development in Ikoyi — Nacre by Primquisite Real Estate.",
-};
+    "Nacre — premium luxury residential development in Ikoyi, Lagos by Primquisite Real Estate, a leading property developer in Nigeria.",
+  path: "/portfolio/nacre",
+  keywords: [
+    "Ikoyi property developer",
+    "luxury homes Ikoyi Lagos",
+    "residential development Lagos",
+  ],
+});
 
 export default function NacrePortfolioPage() {
   return (

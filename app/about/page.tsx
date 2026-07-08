@@ -4,13 +4,19 @@ import { AboutCoreValuesSection } from "@/components/sections/about/AboutCoreVal
 import { AboutHeroSection } from "@/components/sections/about/AboutHeroSection";
 import { AboutMissionVisionSection } from "@/components/sections/about/AboutMissionVisionSection";
 import { AboutWhoWeAreSection } from "@/components/sections/about/AboutWhoWeAreSection";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Primquisite Real Estate",
+export const metadata = createPageMetadata({
+  title: "About Us",
   description:
-    "Learn about Primquisite Real Estate — mission, vision, and values shaping premium development in Nigeria.",
-};
+    "Learn about Primquisite Real Estate — a property developer and real estate agency in Lagos, Nigeria, delivering premium residential projects with transparency and long-term value.",
+  path: "/about",
+  keywords: [
+    "real estate developers in Nigeria",
+    "property developers in Lagos",
+    "Lagos real estate company",
+  ],
+});
 
 export default function AboutPage() {
   return (
