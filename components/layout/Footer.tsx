@@ -71,7 +71,9 @@ export function Footer() {
                   height={22}
                   loading="lazy"
                 />
-                <span>20 Awudu Ekpekha Blvd, Lekki Phase 1, Lagos Nigeria.</span>
+                <span>
+                  20 Awudu Ekpekha Blvd, Lekki Phase 1, Lagos Nigeria.
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Image
@@ -98,11 +100,9 @@ export function Footer() {
             <p className="mt-5 text-sm text-[#D5CFC7]">Follow us:</p>
             <div className="mt-3 flex items-center gap-3">
               {socialLinks.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   aria-label={item.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDA74F] transition-all duration-200 ease-out hover:bg-[#DDA74F]/10 hover:brightness-110 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DDA74F]/80"
                 >
@@ -113,7 +113,7 @@ export function Footer() {
                     height={18}
                     loading="lazy"
                   />
-                </a>
+                </Link>
               ))}
             </div>
           </section>

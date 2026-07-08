@@ -104,36 +104,44 @@ export function Navbar() {
           </Link>
         </div>
 
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded border border-white/40 text-white transition-all duration-200 ease-out hover:bg-white/10 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? (
+        {open ? (
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded border border-white/40 text-white transition-all duration-200 ease-out hover:bg-white/10 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 lg:hidden"
+            aria-expanded="true"
+            aria-controls="mobile-nav"
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+          >
             <span className="text-2xl leading-none" aria-hidden>
               ×
             </span>
-          ) : (
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded border border-white/40 text-white transition-all duration-200 ease-out hover:bg-white/10 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 lg:hidden"
+            aria-expanded="false"
+            aria-label="Open menu"
+            onClick={() => setOpen(true)}
+          >
             <span className="flex flex-col gap-1.5" aria-hidden>
               <span className="block h-0.5 w-6 bg-white transition-transform duration-200" />
               <span className="block h-0.5 w-6 bg-white transition-transform duration-200" />
               <span className="block h-0.5 w-6 bg-white transition-transform duration-200" />
             </span>
-          )}
-        </button>
+          </button>
+        )}
       </nav>
 
-      <AnimatePresence>
-        {open ? (
-          <motion.div
-            key="mobile-nav"
-            id="mobile-nav"
-            role="dialog"
-            aria-modal="true"
-            className="fixed inset-0 z-[100] bg-[#231F20]/98 lg:hidden"
+      <div id="mobile-nav" className="lg:hidden">
+        <AnimatePresence>
+          {open ? (
+            <motion.div
+              key="mobile-nav-panel"
+              role="dialog"
+              aria-modal="true"
+              className="fixed inset-0 z-[100] bg-[#231F20]/98"
             initial={reduce ? false : { opacity: 0 }}
             animate={reduce ? false : { opacity: 1 }}
             exit={reduce ? undefined : { opacity: 0 }}
@@ -177,7 +185,8 @@ export function Navbar() {
             </motion.div>
           </motion.div>
         ) : null}
-      </AnimatePresence>
+        </AnimatePresence>
+      </div>
     </header>
   );
 }
