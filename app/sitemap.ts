@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/constants/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base =
@@ -9,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/services",
     "/portfolio",
+    "/blog",
     "/contact",
     "/cookie-notice-policy",
     "/privacy-notice",
@@ -16,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/portfolio/crescendo",
     "/portfolio/ezra-court",
     "/portfolio/arabella",
+    ...BLOG_POSTS.map((post) => `/blog/${post.slug}`),
   ];
 
   return routes.map((path) => ({
