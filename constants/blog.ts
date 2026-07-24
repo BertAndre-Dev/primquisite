@@ -23,6 +23,84 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "preventive-maintenance-the-secret-to-long-lasting-buildings",
+    title: "Preventive Maintenance: The Secret to Long-Lasting Buildings",
+    excerpt:
+      "The difference between buildings that age well and those that deteriorate early often isn't construction quality — it's the quality of maintenance.",
+    publishedAt: "2026-07-24",
+    coverImage: "/blog/blog-2.jpeg",
+    coverImageAlt:
+      "Well-maintained modern residential terrace homes at sunset",
+    intro: [
+      "Walk through any city, and you'll notice an interesting contrast.",
+      "Some buildings, despite being decades old, still look inviting. Their walls are well maintained, the surroundings are clean, the paintwork remains fresh, and everything—from the lighting to the landscaping, works as it should.",
+      "Others begin to show signs of deterioration just a few years after completion. Cracked walls, leaking roofs, faulty electrical fittings, peeling paint, and poorly maintained common areas gradually diminish both the appearance and value of the property.",
+      "The difference isn't always the quality of construction.",
+      "More often than not, it's the quality of maintenance.",
+      "Preventive maintenance is one of the most overlooked aspects of property ownership, yet it plays one of the biggest roles in preserving a building's lifespan, protecting investments, and ensuring a safe, comfortable living environment.",
+    ],
+    sections: [
+      {
+        heading: "Prevention Is Always Better Than Repair",
+        paragraphs: [
+          "Many property owners wait until something breaks before taking action. A leaking pipe is ignored until it floods a room. A small roof crack is left unattended until it causes water damage. An unusual electrical fault is overlooked until it becomes a major safety concern.",
+          "While this approach may seem like a way to save money in the short term, it often leads to more expensive repairs in the future.",
+          "Preventive maintenance focuses on identifying and addressing small issues before they become significant problems. Regular inspections, routine servicing, and timely repairs help reduce unexpected costs while keeping buildings in excellent condition.",
+          "Simply put, fixing a small problem today is almost always more affordable than replacing an entire system tomorrow.",
+        ],
+      },
+      {
+        heading: "The Building Systems That Need Regular Attention",
+        paragraphs: [
+          "Every building is made up of systems that work together to create a safe and functional environment. These systems naturally experience wear and tear over time, making regular maintenance essential. Some of the most important areas include:",
+          "A consistent maintenance schedule helps extend the life of these systems while minimizing disruptions for residents.",
+        ],
+        bullets: [
+          "Roofing: Inspect for leaks, damaged sheets or tiles, blocked gutters, and signs of water damage.",
+          "Plumbing: Check for leaking pipes, dripping taps, blocked drains, and water pressure issues.",
+          "Electrical Systems: Test wiring, circuit breakers, lighting, and power outlets to reduce safety risks.",
+          "Exterior Finishes: Repaint surfaces when necessary, seal cracks early, and protect walls from moisture damage.",
+          "Mechanical Equipment: Service pumps, generators, elevators, and other equipment according to the manufacturer's recommendations.",
+        ],
+      },
+      {
+        heading: "Protecting Property Value",
+        paragraphs: [
+          "A well-maintained property doesn't just look better, it performs better in the market.",
+          "Whether you're a homeowner planning to live in your property for years or an investor thinking about future resale opportunities, maintenance directly affects value.",
+          "Prospective buyers and tenants often judge a property long before they step inside. Clean surroundings, functioning infrastructure, and well-kept common areas create confidence that the property has been responsibly managed.",
+          "In contrast, visible neglect can reduce buyer interest, increase repair negotiations, and lower market value.",
+          "Maintaining a property is not simply an expense—it's an investment in preserving one of your most valuable assets.",
+        ],
+      },
+      {
+        heading: "Maintenance Builds Better Communities",
+        paragraphs: [
+          "Property maintenance extends beyond individual homes.",
+          "Shared spaces such as roads, drainage systems, recreational areas, security infrastructure, street lighting, and landscaped environments all contribute to residents' daily experience.",
+          "When these shared facilities are properly maintained, communities remain safer, more attractive, and more enjoyable to live in. They also encourage stronger resident satisfaction and help preserve the long-term appeal of the entire development.",
+          "Great communities are not defined only by how they are built, but by how they are cared for over time.",
+        ],
+      },
+      {
+        heading: "A Long-Term Mindset",
+        paragraphs: [
+          "Buildings are designed to serve generations, but they can only achieve their full lifespan when maintenance becomes part of everyday property management.",
+          "Developers, facility managers, estate managers, and homeowners all have a role to play in protecting the quality of the environments they create and inhabit.",
+          "Routine inspections, planned servicing, and prompt repairs are not just operational tasks, they are commitments to safety, sustainability, and long-term value.",
+        ],
+      },
+      {
+        heading: "Building Today, Preserving Tomorrow",
+        paragraphs: [
+          "We believe quality extends beyond construction. Creating exceptional residential developments means delivering communities that are designed to remain functional, attractive, and valuable for years to come.",
+          "Preventive maintenance is one of the simplest ways to protect that vision.",
+          "Because the true measure of a great development isn't just how impressive it looks on the day it's completed, it's how well it continues to serve the people who call it home for many years to come.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "the-future-of-residential-living-in-nigeria",
     title: "The Future of Residential Living in Nigeria",
     excerpt:
