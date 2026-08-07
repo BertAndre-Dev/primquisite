@@ -23,6 +23,69 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "how-green-spaces-create-healthier-communities-and-stronger-property-values",
+    title:
+      "How Green Spaces Create Healthier Communities and Stronger Property Values",
+    excerpt:
+      "Parks, landscaped gardens, and open recreational areas are essential to modern communities—and a smart investment in quality of life and long-term property value.",
+    publishedAt: "2026-08-05",
+    coverImage: "/blog/blog-3.jpeg",
+    coverImageAlt:
+      "Modern residential development with landscaped green spaces, tree-lined walkways, and parks",
+    intro: [
+      "When people think about valuable real estate, they often focus on location, architecture, or premium finishes. While these factors are important, one feature is becoming increasingly influential in determining both quality of life and long-term property value: green spaces.",
+      "Parks, landscaped gardens, tree-lined streets, and open recreational areas are no longer considered luxury additions, they are essential elements of modern, sustainable communities. As cities become more densely populated, access to nature is playing a bigger role in where people choose to live and invest.",
+      "For developers, homeowners, and investors, incorporating green spaces into residential communities is not just an environmental decision, it's a smart investment.",
+    ],
+    sections: [
+      {
+        heading: "Green Spaces Improve Everyday Living",
+        paragraphs: [
+          "A home is more than the building itself; it's the environment that surrounds it.",
+          "Well-designed green spaces provide residents with places to relax, exercise, and spend time with family and neighbours. Whether it's a small community park, a landscaped courtyard, or shaded walkways, these spaces encourage outdoor activity and create opportunities for social interaction.",
+          "Research has consistently shown that access to green environments can reduce stress, improve mental well-being, and promote healthier lifestyles. Children have safe areas to play, adults enjoy spaces to unwind, and communities become more connected through shared public spaces.",
+          "When people enjoy where they live, they are more likely to stay, invest, and contribute to the long-term success of the community.",
+        ],
+      },
+      {
+        heading: "Green Communities Attract Buyers and Investors",
+        paragraphs: [
+          "Property buyers today are looking beyond square metres and floor plans. They want neighbourhoods that offer comfort, convenience, and a high quality of life.",
+          "Developments with attractive landscaping, parks, and recreational spaces often stand out in competitive property markets because they offer more than just housing, they offer an enhanced living experience.",
+          "For investors, this translates into stronger demand, higher occupancy rates, and greater long-term appreciation. Properties located in well-planned, green communities are often perceived as more desirable, helping them retain value over time.",
+          "In today's market, investing in sustainable community design is also an investment in market competitiveness.",
+        ],
+      },
+      {
+        heading: "Sustainability Starts with Thoughtful Design",
+        paragraphs: [
+          "Green spaces play an important role in sustainable real estate development.",
+          "Trees help reduce urban heat, improve air quality, and provide natural shade. Landscaped areas support biodiversity, reduce soil erosion, and improve rainwater absorption, helping communities better manage stormwater and reduce flooding risks.",
+          "These environmental benefits align closely with Environmental, Social, and Governance (ESG) principles, which are increasingly influencing property development and investment decisions around the world.",
+          "Developers who prioritise sustainability are not only protecting the environment, they are building communities that remain resilient and attractive for future generations.",
+        ],
+      },
+      {
+        heading: "The Long-Term Value of Community Planning",
+        paragraphs: [
+          "The most successful residential developments are designed with people in mind.",
+          "Thoughtfully planned green spaces encourage walking, outdoor recreation, and stronger community relationships. They also complement other important features such as pedestrian-friendly streets, recreational facilities, and accessible public spaces.",
+          "When these elements work together, they create neighbourhoods where residents feel safe, connected, and proud to live.",
+          "This sense of belonging is one of the strongest drivers of long-term property value.",
+        ],
+      },
+      {
+        heading: "Investing in Better Communities",
+        paragraphs: [
+          "At Primquisite Real Estate, we believe that exceptional developments extend beyond buildings. They create environments where people can enjoy healthier lifestyles, stronger communities, and lasting value.",
+          "Green spaces are not simply decorative features—they are investments in people, sustainability, and the future of every community.",
+          "As the future of property development in Nigeria continues to evolve, communities that embrace thoughtful planning and sustainable design will remain the places where people want to live, work, and grow.",
+          "Because great developments aren't measured only by the homes they build—but by the lives they help enrich.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "preventive-maintenance-the-secret-to-long-lasting-buildings",
     title: "Preventive Maintenance: The Secret to Long-Lasting Buildings",
     excerpt:
