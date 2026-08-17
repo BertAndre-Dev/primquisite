@@ -38,7 +38,7 @@ export function BlogCard({ post }: BlogCardProps) {
         >
           {formatBlogDate(post.publishedAt)}
         </time>
-        <h2 className="mt-2 text-xl font-bold text-black md:text-2xl">
+        <h2 className="mt-2 text-xl font-bold leading-snug tracking-[-0.015em] text-black md:text-2xl">
           <Link
             href={href}
             className="transition-colors duration-200 ease-out hover:text-black/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A35A] focus-visible:ring-offset-2"

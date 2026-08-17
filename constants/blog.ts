@@ -3,6 +3,8 @@ export type BlogSection = {
   paragraphs: string[];
   /** Optional bullet list after the paragraphs */
   bullets?: string[];
+  /** Paragraph index after which to render bullets (defaults to 0) */
+  bulletsAfter?: number;
   /** Place an in-article image after this section */
   imageAfter?: {
     src: string;
@@ -22,6 +24,80 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "why-walkable-communities-are-the-future-of-urban-living",
+    title: "Why Walkable Communities Are the Future of Urban Living",
+    excerpt:
+      "Walkable neighbourhoods bring homes, amenities, and green spaces closer together—creating better everyday living and stronger long-term property value.",
+    publishedAt: "2026-08-12",
+    coverImage: "/blog/blog-4.jpeg",
+    coverImageAlt:
+      "Walkable urban neighbourhood with landscaped pedestrian pathways, trees, and nearby amenities",
+    intro: [
+      "Imagine living in a beautiful modern home, but needing a car every time you want to buy groceries, meet a neighbour, visit a green space, or simply take a walk.",
+      "The house may be impressive, but the community isn't working as well as it could.",
+      "Now imagine a neighbourhood where you can step outside and comfortably walk along landscaped pathways, access nearby amenities, enjoy green spaces, and interact with people around you.",
+      "That is the idea behind walkable communities.",
+    ],
+    sections: [
+      {
+        heading: "More Than Just Walking",
+        paragraphs: [
+          "Walkability is not simply about creating sidewalks. It is about designing neighbourhoods around the needs of the people who live in them.",
+          "A well-designed walkable community can bring homes, green spaces, recreational areas, essential services and social spaces closer together.",
+          "This creates an environment where residents have more opportunities to move around without relying entirely on cars.",
+          "For developers and property investors, this represents a shift in how we think about modern real estate development.",
+          "The value of a property is increasingly connected to what surrounds it.",
+        ],
+      },
+      {
+        heading: "Walkability and Quality of Life",
+        paragraphs: [
+          "A community that encourages walking can contribute to a more active and connected lifestyle.",
+          "Landscaped walkways can provide opportunities for exercise. Shared spaces can encourage residents to interact. Green areas can create places to relax, while thoughtfully planned streets can make neighbourhoods feel safer and more welcoming.",
+          "These features may seem small individually, but together they can significantly influence the quality of life in a community.",
+          "And when residents enjoy where they live, communities are more likely to remain attractive over time.",
+        ],
+      },
+      {
+        heading: "What Does This Mean for Property Value?",
+        paragraphs: [
+          "For property buyers and investors, location has always been important. But location is more than an address.",
+          "It is also about accessibility, infrastructure, amenities and community design.",
+          "A property located within a well-planned neighbourhood can offer advantages beyond the building itself. Good pedestrian infrastructure, attractive public spaces and convenient access to everyday facilities can make a development more desirable to current and future residents.",
+          "This can support the long-term value of real estate investments.",
+          "It is one reason sustainable property development is increasingly moving beyond energy efficiency and environmental considerations to include how communities function.",
+        ],
+      },
+      {
+        heading: "Building Communities, Not Just Buildings",
+        paragraphs: [
+          "The future of real estate will not simply be about constructing more homes.",
+          "It will be about creating places where people can live, connect and thrive.",
+          "For developers, that means asking bigger questions:",
+          "These questions help transform a development from a collection of buildings into a genuine community.",
+        ],
+        bulletsAfter: 2,
+        bullets: [
+          "Can residents move around easily?",
+          "Are there inviting public and green spaces?",
+          "Are essential amenities accessible?",
+          "Does the design encourage community interaction?",
+          "Will the neighbourhood remain valuable and functional as it grows?",
+        ],
+      },
+      {
+        heading: "The Future Is Walkable",
+        paragraphs: [
+          "As cities grow and lifestyles evolve, people will increasingly look for neighbourhoods that offer convenience, connection and quality of life.",
+          "Walkable communities can provide all three.",
+          "At Primquisite Real Estate, we believe the best developments look beyond today's needs and consider the communities people will want to live in tomorrow.",
+          "Because the future of real estate isn't just about where you live.",
+          "It's about how you live there.",
+        ],
+      },
+    ],
+  },
   {
     slug: "how-green-spaces-create-healthier-communities-and-stronger-property-values",
     title:

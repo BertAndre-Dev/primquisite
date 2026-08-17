@@ -17,13 +17,19 @@ export function BlogArticle({ post }: BlogArticleProps) {
             className="flex flex-wrap items-center text-xs font-medium uppercase tracking-[0.2em] text-black/55"
             aria-label="Breadcrumb"
           >
-            <Link href="/" className="hover:text-black">
+            <Link
+              href="/"
+              className="transition-colors duration-100 ease-out hover:text-black active:text-black"
+            >
               Home
             </Link>
             <span className="mx-2 text-black/30" aria-hidden>
               -
             </span>
-            <Link href="/blog" className="hover:text-black">
+            <Link
+              href="/blog"
+              className="transition-colors duration-100 ease-out hover:text-black active:text-black"
+            >
               Blog
             </Link>
             <span className="mx-2 text-black/30" aria-hidden>
@@ -39,7 +45,7 @@ export function BlogArticle({ post }: BlogArticleProps) {
             {formatBlogDate(post.publishedAt)}
           </time>
 
-          <h1 className="mt-4 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-black md:text-4xl lg:text-5xl">
+          <h1 className="mt-4 max-w-3xl text-3xl font-bold leading-[1.08] tracking-[-0.02em] text-black md:text-4xl lg:text-5xl lg:leading-[1.05]">
             {post.title}
           </h1>
         </div>
@@ -69,7 +75,7 @@ export function BlogArticle({ post }: BlogArticleProps) {
           {post.sections.map((section) => (
             <ScrollReveal key={section.heading}>
               <section>
-                <h2 className="text-2xl font-bold tracking-tight text-black md:text-3xl">
+                <h2 className="text-2xl font-bold leading-snug tracking-[-0.015em] text-black md:text-3xl">
                   {section.heading}
                 </h2>
 
@@ -84,7 +90,8 @@ export function BlogArticle({ post }: BlogArticleProps) {
                     {section.paragraphs.map((paragraph, index) => (
                       <div key={paragraph}>
                         <p>{paragraph}</p>
-                        {section.bullets && index === 0 ? (
+                        {section.bullets &&
+                        index === (section.bulletsAfter ?? 0) ? (
                           <ul className="mt-5 space-y-3 pl-1">
                             {section.bullets.map((item) => (
                               <li key={item} className="flex gap-3">
@@ -120,7 +127,7 @@ export function BlogArticle({ post }: BlogArticleProps) {
         <div className="mt-16 border-t border-black/10 pt-10">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.15em] text-[#C5A059] transition-colors duration-200 ease-out hover:text-[#a8843f]"
+            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.15em] text-[#C5A059] transition-[color,transform] duration-100 ease-out hover:text-[#a8843f] active:scale-[0.97] motion-reduce:active:scale-100"
           >
             <span aria-hidden>←</span>
             <span>Back to blog</span>
