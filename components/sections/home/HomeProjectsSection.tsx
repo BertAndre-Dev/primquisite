@@ -7,12 +7,13 @@ import { LANDING_PROJECTS } from "@/constants/projects";
 import { EASE_OUT, staggerDelaySeconds } from "@/lib/motion";
 import type { ProjectStatus } from "@/types";
 
-type Filter = "all" | ProjectStatus;
+type Filter = "all" | ProjectStatus | "sold-out";
 
 const FILTERS: { key: Filter; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "active", label: "Active" },
   { key: "ongoing", label: "Ongoing" },
+  { key: "active", label: "Active" },
+  { key: "sold-out", label: "Sold Out" },
 ];
 
 interface HomeProjectsSectionProps {
@@ -26,7 +27,15 @@ export function HomeProjectsSection({ title = "Our Projects" }: HomeProjectsSect
 
   const visible = useMemo(() => {
     if (filter === "all") return LANDING_PROJECTS;
-    return LANDING_PROJECTS.filter((p) => p.status === filter);
+    if (filter === "sold-out") {
+      return LANDING_PROJECTS.filter((project) => project.soldOut);
+    }
+    if (filter === "active") {
+      return LANDING_PROJECTS.filter(
+        (project) => project.status === "active" && !project.soldOut,
+      );
+    }
+    return LANDING_PROJECTS.filter((project) => project.status === filter);
   }, [filter]);
 
   return (
