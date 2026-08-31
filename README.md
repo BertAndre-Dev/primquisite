@@ -57,9 +57,16 @@ NEXT_PUBLIC_SITE_NAME=Primquisite Real Estate
 
 # Google Analytics measurement ID (production only)
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+
+# SendGrid — contact form delivery
+SENDGRID_API_KEY=your_sendgrid_api_key
+SENDGRID_FROM_EMAIL=info@primquisiterealestate.com
+SENDGRID_TO_EMAIL=info@primquisiterealestate.com
 ```
 
 Analytics scripts load only when `NODE_ENV=production` and a measurement ID is set.
+
+`SENDGRID_FROM_EMAIL` must be a sender verified in your SendGrid account (single sender or domain authentication). Submissions are delivered to `SENDGRID_TO_EMAIL`, with the visitor's email set as `Reply-To`.
 
 ## Scripts
 
@@ -128,7 +135,7 @@ Each page exports its own metadata. The root layout sets defaults, a title templ
 
 ## Contact form
 
-The **“Interested in owning or investing?”** form posts to `POST /api/contact`. The API currently validates the payload and returns a success response. It does **not** send email yet — wire up a provider (e.g. Resend, SendGrid, Nodemailer) in `app/api/contact/route.ts` to deliver submissions to `info@primquisiterealestate.com`.
+The **“Interested in owning or investing?”** form posts to `POST /api/contact`. The API validates the payload and sends an email via SendGrid to `info@primquisiterealestate.com` (configurable with `SENDGRID_TO_EMAIL`). The visitor's email is set as `Reply-To` so you can respond directly from your inbox.
 
 ## Deployment
 
