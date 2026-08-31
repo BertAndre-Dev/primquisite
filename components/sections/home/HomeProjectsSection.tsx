@@ -83,6 +83,7 @@ export function HomeProjectsSection({ title = "Our Projects" }: HomeProjectsSect
                     : `/portfolio#${project.id}`
                 }
                 badges={project.badges}
+                soldOut={project.soldOut}
               />
             </motion.li>
           ))}

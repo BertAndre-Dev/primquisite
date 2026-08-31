@@ -101,7 +101,7 @@ export function Navbar() {
             href="/contact"
             className="inline-flex border border-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 ease-out hover:bg-white/10 active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A168]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#231F20]/55"
           >
-            Send us a message
+            Book for Inspection
           </Link>
         </div>
 
@@ -180,7 +180,7 @@ export function Navbar() {
                   className="mt-10 inline-flex w-full justify-center rounded-md border border-white px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 ease-out hover:bg-white/10 active:scale-[0.98] motion-reduce:active:scale-100"
                   onClick={() => setOpen(false)}
                 >
-                  Send us a message
+                  Book for Inspection
                 </Link>
               </div>
             </motion.div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SoldOutRibbon } from "@/components/ui/SoldOutRibbon";
 
 const DEFAULT_BADGES = ["Residential", "Luxury Homes"];
 
@@ -10,6 +11,7 @@ type ProjectCardProps = {
   imageAlt?: string;
   href?: string;
   badges?: string[];
+  soldOut?: boolean;
 };
 
 export function ProjectCard({
@@ -19,6 +21,7 @@ export function ProjectCard({
   imageAlt,
   href = "/portfolio",
   badges = DEFAULT_BADGES,
+  soldOut = false,
 }: ProjectCardProps) {
   return (
     <Link
@@ -46,6 +49,9 @@ export function ProjectCard({
               </span>
             ))}
           </div>
+
+          {/* Sold-out ribbon (clipped into a corner by the parent's overflow-hidden) */}
+          {soldOut && <SoldOutRibbon />}
 
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

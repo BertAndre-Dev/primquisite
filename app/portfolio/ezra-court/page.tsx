@@ -1,8 +1,9 @@
-import { StaggerMount } from "@/components/motion/StaggerMount";
 import { PortfolioContactSection } from "@/components/portfolio/PortfolioContactSection";
 import { PortfolioProjectDetail } from "@/components/portfolio/PortfolioProjectDetail";
 import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHero";
 import { ProjectGalleryCarousel } from "@/components/portfolio/ProjectGalleryCarousel";
+import { StaggerMount } from "@/components/motion/StaggerMount";
+import { LANDING_PROJECTS } from "@/constants/projects";
 import { Cormorant_Garamond } from "next/font/google";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -10,6 +11,8 @@ const serif = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["600", "700"],
 });
+
+const EZRA_COURT = LANDING_PROJECTS.find((project) => project.id === "ezra-court")!;
 
 const EZRA_GALLERY = [
   { src: "/ezra/ezra-1.svg", alt: "Community and landscaping" },
@@ -50,7 +53,8 @@ export default function EzraCourtPortfolioPage() {
         intro="A well-planned residential community combining thoughtful design with quality finishes."
         imageSrc="/hero/ezra.svg"
         imageAlt="Ezra Court residential development at dusk"
-        badges={["Residential", "Luxury Homes", "Active"]}
+        badges={[...(EZRA_COURT.badges ?? []), "Sold Out"]}
+        soldOut={EZRA_COURT.soldOut ?? false}
       />
       <ProjectGalleryCarousel images={EZRA_GALLERY} />
       <PortfolioContactSection />

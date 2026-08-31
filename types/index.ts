@@ -20,6 +20,8 @@ export type Project = {
   /** If set, project card links here instead of /portfolio#id */
   slug?: string;
   badges?: string[];
+  /** Show a prominent "Sold Out" ribbon on the card image. */
+  soldOut?: boolean;
 };
 
 /** Full-bleed image card with overlay title (service pillars, feature strips). */

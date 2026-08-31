@@ -17,7 +17,8 @@ export const LANDING_PROJECTS: Project[] = [
     imageSrc: "/hero/ezra.svg",
     status: "active",
     slug: "ezra-court",
-    badges: ["Residential", "Luxury Homes", "Active"],
+    badges: ["Residential", "Luxury Homes"],
+    soldOut: true,
   },
   {
     id: "crescendo",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SoldOutRibbon } from "@/components/ui/SoldOutRibbon";
 
 export const DEFAULT_PORTFOLIO_FEATURES = [
   "Well-designed maisonette layouts",
@@ -17,6 +18,7 @@ export type PortfolioProjectDetailProps = {
   imageSrc: string;
   imageAlt: string;
   badges?: string[];
+  soldOut?: boolean;
   features?: readonly string[];
 };
 
@@ -30,6 +32,7 @@ export function PortfolioProjectDetail({
   imageSrc,
   imageAlt,
   badges = DEFAULT_BADGES,
+  soldOut = false,
   features = DEFAULT_PORTFOLIO_FEATURES,
 }: PortfolioProjectDetailProps) {
   return (
@@ -56,6 +59,7 @@ export function PortfolioProjectDetail({
               </span>
             ))}
           </div>
+          {soldOut && <SoldOutRibbon />}
         </div>
 
         {/* Text — order-2 on mobile (below), order-2 on desktop (right) */}
