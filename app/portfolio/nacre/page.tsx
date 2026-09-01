@@ -13,9 +13,16 @@ const serif = Cormorant_Garamond({
 });
 
 const NACRE_GALLERY = [
-  { src: "/hero/nacre.svg", alt: "Nacre residential development" },
-  { src: "/images/landing/why.svg", alt: "Residential community" },
-  { src: "/images/landing/partner.svg", alt: "Development view" },
+  { src: "/nacre/nacre-1.jpeg", alt: "Nacre residential development" },
+  { src: "/nacre/nacre-2.jpeg", alt: "Nacre residential development exterior" },
+  { src: "/nacre/nacre-3.jpeg", alt: "Nacre residential community" },
+  { src: "/nacre/nacre-4.jpeg", alt: "Nacre residential amenities" },
+  { src: "/nacre/nacre-5.jpeg", alt: "Nacre residential interiors" },
+  { src: "/nacre/nacre-6.jpeg", alt: "Nacre residential development view" },
+  { src: "/nacre/nacre-7.jpeg", alt: "Nacre residential landscaping" },
+  { src: "/nacre/nacre-8.jpeg", alt: "Nacre residential building" },
+  { src: "/nacre/nacre-9.jpeg", alt: "Nacre residential architecture" },
+  { src: "/nacre/nacre-10.jpeg", alt: "Nacre residential project" },
 ];
 
 export const metadata = createPageMetadata({
