@@ -13,8 +13,14 @@ const serif = Cormorant_Garamond({
 
 const ARABELLA_GALLERY = [
   { src: "/hero/arabella.svg", alt: "Arabella residential development" },
-  { src: "/images/landing/why.svg", alt: "Building exterior and grounds" },
-  { src: "/images/landing/partner.svg", alt: "Lifestyle and community" },
+  { src: "/arabella/arabella-1.jpeg", alt: "Arabella residential development exterior" },
+  { src: "/arabella/arabella-2.jpeg", alt: "Arabella residential community" },
+  { src: "/arabella/arabella-3.jpeg", alt: "Arabella residential amenities" },
+  { src: "/arabella/arabella-4.jpeg", alt: "Arabella residential building" },
+  { src: "/arabella/arabella-5.jpeg", alt: "Arabella residential architecture" },
+  { src: "/arabella/arabella-6.jpeg", alt: "Arabella residential landscaping" },
+  { src: "/arabella/arabella-7.jpeg", alt: "Arabella residential project view" },
+  { src: "/arabella/arabella-8.png", alt: "Arabella residential development" },
 ];
 
 export const metadata = createPageMetadata({
