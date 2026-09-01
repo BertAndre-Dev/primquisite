@@ -30,6 +30,8 @@ export const metadata = createPageMetadata({
   ],
 });
 
+const NACRE_BROCHURE = "/brochure/Nacre, Ikoyi lastsst.pdf";
+
 export default function NacrePortfolioPage() {
   return (
     <StaggerMount>
@@ -50,6 +52,8 @@ export default function NacrePortfolioPage() {
         intro="A well-planned residential community combining thoughtful design with quality finishes."
         imageSrc="/hero/nacre.svg"
         imageAlt="Nacre residential development exterior"
+        brochureHref={NACRE_BROCHURE}
+        brochureDownloadName="Nacre Ikoyi Brochure.pdf"
       />
       <ProjectGalleryCarousel images={NACRE_GALLERY} />
       <PortfolioContactSection />

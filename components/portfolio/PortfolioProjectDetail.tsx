@@ -20,6 +20,9 @@ export type PortfolioProjectDetailProps = {
   badges?: string[];
   soldOut?: boolean;
   features?: readonly string[];
+  /** PDF in /public — triggers a download when set */
+  brochureHref?: string;
+  brochureDownloadName?: string;
 };
 
 const DEFAULT_BADGES = ["Residential", "Luxury Homes", "Active"];
@@ -34,6 +37,8 @@ export function PortfolioProjectDetail({
   badges = DEFAULT_BADGES,
   soldOut = false,
   features = DEFAULT_PORTFOLIO_FEATURES,
+  brochureHref,
+  brochureDownloadName,
 }: PortfolioProjectDetailProps) {
   return (
     <section className="bg-white px-4 py-14 md:px-6 md:py-20 lg:px-8">
@@ -86,18 +91,36 @@ export function PortfolioProjectDetail({
               </li>
             ))}
           </ul>
-          <Link
-            href="#"
-            className="mt-10 inline-flex w-fit items-center gap-2 rounded-md bg-[#CBA668] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#CBA668]/70 focus-visible:ring-offset-2"
-          >
-            Read Project Brochure
-            <Image
-              src="/arrow_outward.svg"
-              alt="Arrow outward"
-              width={24}
-              height={24}
-            />
-          </Link>
+          {brochureHref ? (
+            <a
+              href={brochureHref}
+              download={brochureDownloadName ?? true}
+              className="mt-10 inline-flex w-fit items-center gap-2 rounded-md bg-[#CBA668] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#CBA668]/70 focus-visible:ring-offset-2"
+            >
+              Read Project Brochure
+              <Image
+                src="/arrow_outward.svg"
+                alt=""
+                width={24}
+                height={24}
+                aria-hidden
+              />
+            </a>
+          ) : (
+            <Link
+              href="#"
+              className="mt-10 inline-flex w-fit items-center gap-2 rounded-md bg-[#CBA668] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#CBA668]/70 focus-visible:ring-offset-2"
+            >
+              Read Project Brochure
+              <Image
+                src="/arrow_outward.svg"
+                alt=""
+                width={24}
+                height={24}
+                aria-hidden
+              />
+            </Link>
+          )}
         </div>
       </div>
     </section>
