@@ -19,7 +19,6 @@ const ARABELLA_GALLERY = [
   { src: "/arabella/arabella-4.jpeg", alt: "Arabella residential building" },
   { src: "/arabella/arabella-5.jpeg", alt: "Arabella residential architecture" },
   { src: "/arabella/arabella-6.jpeg", alt: "Arabella residential landscaping" },
-  { src: "/arabella/arabella-7.jpeg", alt: "Arabella residential project view" },
   { src: "/arabella/arabella-8.png", alt: "Arabella residential development" },
 ];
 
