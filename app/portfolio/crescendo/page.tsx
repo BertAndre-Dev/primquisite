@@ -13,13 +13,13 @@ const serif = Cormorant_Garamond({
 });
 
 const CRESCENDO_GALLERY = [
-  { src: "/cresendo/cres1.svg", alt: "Crescendo residential development" },
-  { src: "/cresendo/cres2.svg", alt: "Interior and living space" },
-  { src: "/cresendo/cres3.jpeg", alt: "Community and amenities" },
-  { src: "/cresendo/cres4.jpeg", alt: "Community and amenities" },
+  // { src: "/cresendo/cres1.svg", alt: "Crescendo residential development" },
+  // { src: "/cresendo/cres2.svg", alt: "Interior and living space" },
+  // { src: "/cresendo/cres3.jpeg", alt: "Community and amenities" },
+  // { src: "/cresendo/cres4.jpeg", alt: "Community and amenities" },
   { src: "/cresendo/crescendo-1.jpeg", alt: "Crescendo construction progress" },
   { src: "/cresendo/crescendo-2.jpeg", alt: "Crescendo residential exterior" },
-  { src: "/cresendo/crescendo-3.png", alt: "Crescendo interior development" },
+  // { src: "/cresendo/crescendo-3.png", alt: "Crescendo interior development" },
   { src: "/cresendo/crescendo-4.png", alt: "Crescendo building exterior" },
 ];
 
