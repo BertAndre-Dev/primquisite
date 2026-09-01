@@ -3,7 +3,6 @@ import { PortfolioProjectDetail } from "@/components/portfolio/PortfolioProjectD
 import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHero";
 import { ProjectGalleryCarousel } from "@/components/portfolio/ProjectGalleryCarousel";
 import { StaggerMount } from "@/components/motion/StaggerMount";
-import { HERO_FIRST_SLIDE_IMAGE } from "@/constants/heroSlides";
 import { Cormorant_Garamond } from "next/font/google";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -45,7 +44,7 @@ export default function NacrePortfolioPage() {
       <PortfolioProjectHero
         heading="PORTFOLIO - NACRE"
         subtitle="Premium residential projects across prime Lagos locations, designed for quality, community, and long-term value."
-        backgroundImage={HERO_FIRST_SLIDE_IMAGE}
+        backgroundImage="/nacre/nacre-10.jpeg"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Portfolio", href: "/portfolio" },
