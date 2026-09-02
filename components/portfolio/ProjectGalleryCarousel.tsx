@@ -1,99 +1,3 @@
-// "use client";
-
-// import Image from "next/image";
-// import { useCallback, useEffect, useState } from "react";
-
-// export type GalleryImage = { src: string; alt: string };
-
-// const DEFAULT_IMAGES: GalleryImage[] = [
-//   { src: "/hero/nacre.svg", alt: "Interior living space" },
-//   { src: "/images/landing/why.svg", alt: "Residential community" },
-//   { src: "/images/landing/partner.svg", alt: "Development view" },
-// ];
-
-// type ProjectGalleryCarouselProps = {
-//   images?: GalleryImage[];
-//   /** Auto-advance interval in ms; omit or 0 to disable */
-//   autoplayMs?: number;
-// };
-
-// export function ProjectGalleryCarousel({
-//   images = DEFAULT_IMAGES,
-//   autoplayMs = 6000,
-// }: ProjectGalleryCarouselProps) {
-//   const slides = images.length > 0 ? images : DEFAULT_IMAGES;
-//   const [index, setIndex] = useState(0);
-//   const total = slides.length;
-
-//   const prev = useCallback(() => {
-//     setIndex((i) => (i - 1 + total) % total);
-//   }, [total]);
-
-//   const next = useCallback(() => {
-//     setIndex((i) => (i + 1) % total);
-//   }, [total]);
-
-//   useEffect(() => {
-//     if (!autoplayMs || total <= 1) return;
-//     const id = window.setInterval(() => next(), autoplayMs);
-//     return () => window.clearInterval(id);
-//   }, [autoplayMs, next, total]);
-
-//   return (
-//     <section className="bg-[#FAF9F6] px-4 pb-16 pt-4 md:px-6 md:pb-24 lg:px-8">
-//       <div className="mx-auto w-full max-w-7xl">
-//         <div className="hidden gap-4 md:grid md:grid-cols-3">
-//           {slides.map((img) => (
-//             <div
-//               key={img.src}
-//               className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200"
-//             >
-//               <Image
-//                 src={img.src}
-//                 alt={img.alt}
-//                 fill
-//                 className="object-cover"
-//                 sizes="33vw"
-//               />
-//             </div>
-//           ))}
-//         </div>
-
-//         <div className="relative md:hidden">
-//           <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-200">
-//             <Image
-//               key={slides[index]?.src}
-//               src={slides[index]!.src}
-//               alt={slides[index]!.alt}
-//               fill
-//               className="object-cover"
-//               sizes="100vw"
-//             />
-//           </div>
-//         </div>
-
-//         <div className="mt-6 flex justify-start gap-3 md:mt-8">
-//           <button
-//             type="button"
-//             onClick={prev}
-//             className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition hover:bg-[#D9A85F]/10"
-//             aria-label="Previous image"
-//           >
-//             ←
-//           </button>
-//           <button
-//             type="button"
-//             onClick={next}
-//             className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition hover:opacity-95"
-//             aria-label="Next image"
-//           >
-//             →
-//           </button>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 "use client";
 
 import Image from "next/image";
@@ -112,7 +16,33 @@ type ProjectGalleryCarouselProps = {
   autoplayMs?: number;
 };
 
-const GAP = 16; // px gap between slides
+const GAP = 16;
+
+type GallerySlideProps = {
+  image: GalleryImage;
+  width: number | undefined;
+  index: number;
+};
+
+function GallerySlide({ image, width, index }: GallerySlideProps) {
+  return (
+    <div
+      className="group relative aspect-[4/4] shrink-0 overflow-hidden rounded-lg bg-neutral-200 transition-[box-shadow,transform] duration-300 ease-out hover:z-10 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.35)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+      style={{
+        width: width && width > 0 ? `${width}px` : "calc(33.333% - 11px)",
+      }}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+        sizes="(max-width: 768px) 100vw, 33vw"
+        priority={index < 3}
+      />
+    </div>
+  );
+}
 
 export function ProjectGalleryCarousel({
   images = DEFAULT_IMAGES,
@@ -126,7 +56,6 @@ export function ProjectGalleryCarousel({
   const trackRef = useRef<HTMLDivElement>(null);
   const [slideWidth, setSlideWidth] = useState(0);
 
-  // Measure container to calculate exact slide width accounting for gaps
   useEffect(() => {
     const measure = () => {
       if (trackRef.current) {
@@ -175,72 +104,46 @@ export function ProjectGalleryCarousel({
   const offset = slideWidth > 0 ? index * (slideWidth + GAP) : 0;
 
   return (
-    <section className="bg-[#FAF9F6] px-4 md:px-0 md:pl-8 xl:pl-20 py-8">
-      <div className="">
-        <div ref={trackRef} className="overflow-hidden rounded-xl">
-          <div
-            className="flex"
-            style={{
-              gap: `${GAP}px`,
-              transform: `translateX(-${offset}px)`,
-              transition: "transform 700ms cubic-bezier(0.4, 0, 0.2, 1)",
-            }}
-          >
-            {[...slides, ...slides, ...slides].map((img, i) => (
-              <div
-                key={`${img.src}-${i}`}
-                className="relative aspect-[4/4] flex-shrink-0 overflow-hidden rounded-lg bg-neutral-200"
-                style={{
-                  width: slideWidth > 0 ? `${slideWidth}px` : "calc(33.333% - 11px)",
-                }}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-            ))}
-          </div>
+    <section className="bg-[#FAF9F6] px-4 py-8 md:pl-8 md:px-0 xl:pl-20">
+      <div ref={trackRef} className="overflow-hidden rounded-xl">
+        <div
+          className="flex"
+          style={{
+            gap: `${GAP}px`,
+            transform: `translateX(-${offset}px)`,
+            transition: "transform 700ms cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+        >
+          {[...slides, ...slides, ...slides].map((img, i) => (
+            <GallerySlide
+              key={`${img.src}-${i}`}
+              image={img}
+              width={slideWidth}
+              index={i}
+            />
+          ))}
         </div>
+      </div>
 
-        {/* Controls */}
-        <div className="mt-6 flex items-center gap-3 md:mt-8">
-          <button
-            type="button"
-            onClick={prev}
-            disabled={animating}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition-all duration-200 ease-out hover:bg-[#D9A85F]/10 active:scale-[0.96] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/50"
-            aria-label="Previous image"
-          >
-            <Image src="/icons/arrow-left.svg" alt="Previous image" width={24} height={24} />
-          </button>
-          <button
-            type="button"
-            onClick={next}
-            disabled={animating}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.96] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/60"
-            aria-label="Next image"
-          >
-            <Image src="/icons/arrow-right.svg" alt="Next image" width={24} height={24} />
-          </button>
-
-          {/* <div className="ml-2 flex gap-2">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => goTo(i)}
-                aria-label={`Go to slide ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === index ? "w-6 bg-[#D9A85F]" : "w-1.5 bg-neutral-300"
-                }`}
-              />
-            ))}
-          </div> */}
-        </div>
+      <div className="mt-6 flex items-center gap-3 md:mt-8">
+        <button
+          type="button"
+          onClick={prev}
+          disabled={animating}
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-white text-[#D9A85F] transition-all duration-200 ease-out hover:bg-[#D9A85F]/10 active:scale-[0.96] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/50"
+          aria-label="Previous image"
+        >
+          <Image src="/icons/arrow-left.svg" alt="" width={24} height={24} aria-hidden />
+        </button>
+        <button
+          type="button"
+          onClick={next}
+          disabled={animating}
+          className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-[#D9A85F] bg-[#D9A85F] text-white transition-all duration-200 ease-out hover:opacity-95 active:scale-[0.96] motion-reduce:active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A85F]/60"
+          aria-label="Next image"
+        >
+          <Image src="/icons/arrow-right.svg" alt="" width={24} height={24} aria-hidden />
+        </button>
       </div>
     </section>
   );
