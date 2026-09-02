@@ -35,7 +35,7 @@ export function HomeValueSection() {
             </Link>
           </div>
 
-          <div className="flex justify-center md:justify-end">
+          <div className="hidden justify-center md:flex md:justify-end">
             <Image
               src="/logo.svg"
               alt="Primquisite mark"
