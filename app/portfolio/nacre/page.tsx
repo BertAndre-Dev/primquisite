@@ -22,7 +22,7 @@ const NACRE_GALLERY = [
   { src: "/nacre/nacre-8.jpeg", alt: "Nacre residential building" },
   { src: "/nacre/nacre-9.jpeg", alt: "Nacre residential architecture" },
   { src: "/nacre/nacre-10.jpeg", alt: "Nacre residential project" },
-  { src: "/nacre/nacre-11.jpeg", alt: "Nacre residential project" },
+  { src: "/nacre/nacre-11.png", alt: "Nacre residential project" },
   { src: "/nacre/nacre-12.jpeg", alt: "Nacre residential project" },
 ];
 
