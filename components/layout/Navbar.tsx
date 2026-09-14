@@ -55,9 +55,9 @@ export function Navbar() {
           <Image
             src="/logos.svg"
             alt="Primquisite Real Estate"
-            width={88}
-            height={112}
-            className="h-11 w-auto"
+            width={120}
+            height={128}
+            className="h-22 w-auto"
             priority
           />
         </Link>

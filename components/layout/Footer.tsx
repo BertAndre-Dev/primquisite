@@ -51,6 +51,7 @@ export function Footer() {
             width={120}
             height={128}
             priority={false}
+            className="h-22 w-auto"
           />
         </div>
 
