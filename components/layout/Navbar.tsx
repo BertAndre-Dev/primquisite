@@ -53,21 +53,13 @@ export function Navbar() {
           className="flex shrink-0 items-center gap-3 transition-opacity duration-200 ease-out hover:opacity-90 active:scale-[0.98] motion-reduce:active:scale-100"
         >
           <Image
-            src="/logo.svg"
+            src="/logos.svg"
             alt="Primquisite Real Estate"
-            width={44}
-            height={56}
+            width={88}
+            height={112}
             className="h-11 w-auto"
             priority
           />
-          <span className="flex flex-col leading-tight text-white">
-            <span className="text-base font-bold tracking-wide md:text-lg">
-              Primquisite
-            </span>
-            <span className="text-xs font-normal text-white/90 md:text-sm">
-              Real Estate
-            </span>
-          </span>
         </Link>
 
         <ul className="hidden items-center gap-8 lg:flex">

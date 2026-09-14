@@ -46,16 +46,12 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl px-6 py-12 xl:px-0">
         <div className="mb-10 flex justify-center items-center">
           <Image
-            src="/logo.svg"
+            src="/logos.svg"
             alt="Primquisite Real Estate"
-            width={60}
-            height={64}
+            width={120}
+            height={128}
             priority={false}
           />
-          <div className="flex flex-col">
-            <p className="text-2xl font-bold uppercase">Primquisite</p>
-            <p className="text-sm text-[#D5CFC7] uppercase">Real Estate</p>
-          </div>
         </div>
 
         <div className="grid gap-10 md:gap-20 xl:gap-60 md:grid-cols-3">
