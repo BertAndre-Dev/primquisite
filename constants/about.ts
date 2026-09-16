@@ -1,6 +1,7 @@
 export type AboutCarouselMissionVisionSlide = {
   id: "mission-vision";
   layout: "mission-vision";
+  navLabel: string;
   leftImage: string;
   leftImageAlt: string;
   mission: { body: string };
@@ -10,6 +11,7 @@ export type AboutCarouselMissionVisionSlide = {
 export type AboutCarouselBulletsSlide = {
   id: "approach" | "why";
   layout: "bullets";
+  navLabel: string;
   title: string;
   leftImage: string;
   leftImageAlt: string;
@@ -26,6 +28,7 @@ export const ABOUT_CAROUSEL_SLIDES: AboutCarouselSlide[] = [
   {
     id: "mission-vision",
     layout: "mission-vision",
+    navLabel: "Mission & Vision",
     leftImage: "/nacre/nacre-13.jpeg",
     leftImageAlt: "Primquisite residential development at dusk",
     mission: {
@@ -38,6 +41,7 @@ export const ABOUT_CAROUSEL_SLIDES: AboutCarouselSlide[] = [
   {
     id: "approach",
     layout: "bullets",
+    navLabel: "Our Approach",
     title: "OUR APPROACH",
     leftImage: "/nacre/nacre-16.png",
     leftImageAlt: "Construction and project delivery",
@@ -54,6 +58,7 @@ export const ABOUT_CAROUSEL_SLIDES: AboutCarouselSlide[] = [
   {
     id: "why",
     layout: "bullets",
+    navLabel: "Why We Exist",
     title: "WHY WE EXIST",
     leftImage: "/arabella/arabella-9.png",
     leftImageAlt: "Modern residential development",
@@ -78,21 +83,21 @@ export const CORE_VALUES: CoreValueCard[] = [
   {
     title: "Execution Over Promise",
     description: "We are measured by what we deliver.",
-    image: "/images/landing/why.svg",
+    image: "/nacre/nacre-13.jpeg",
   },
   {
-    title: "Community-First development",
-    description: "We build for long term living, not short-term gain",
+    title: "Community-First Development",
+    description: "We build for long-term living, not short-term gain.",
     image: "/about/team.svg",
   },
   {
-    title: "Transparency at baseline",
-    description: "We communicate clearly and consistently",
+    title: "Transparency at Baseline",
+    description: "We communicate clearly and consistently.",
     image: "/about/transparancy.svg",
   },
   {
-    title: "Technology as infrastructure",
-    description: "Digital systems are embedded in every project",
+    title: "Technology as Infrastructure",
+    description: "Digital systems are embedded in every project.",
     image: "/about/technology.svg",
   },
 ];
