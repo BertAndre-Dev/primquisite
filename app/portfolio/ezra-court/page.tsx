@@ -15,11 +15,9 @@ const serif = Cormorant_Garamond({
 const EZRA_COURT = LANDING_PROJECTS.find((project) => project.id === "ezra-court")!;
 
 const EZRA_GALLERY = [
-  { src: "/ezra/ezra-5.JPG", alt: "Ezra Court residential development" },
-  { src: "/ezra/ezra-1.svg", alt: "Community and landscaping" },
-  { src: "/ezra/ezra-2.svg", alt: "Residential amenities" },
+  { src: "/ezra/ezra-2.jpeg", alt: "Residential amenities" },
+  { src: "/ezra/ezra-1.jpeg", alt: "Community and landscaping" },
   { src: "/ezra/ezra-3.jpeg", alt: "Residential amenities" },
-  { src: "/ezra/ezra-4.jpeg", alt: "Residential amenities" },
 ];
 
 export const metadata = createPageMetadata({
@@ -40,7 +38,7 @@ export default function EzraCourtPortfolioPage() {
       <PortfolioProjectHero
         heading="PORTFOLIO - EZRA COURT"
         subtitle="Premium residential projects across prime Lagos locations, designed for quality, community, and long-term value."
-        backgroundImage="/hero/ezra.svg"
+        backgroundImage="/ezra/ezra-2.jpeg"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Portfolio", href: "/portfolio" },
@@ -52,7 +50,7 @@ export default function EzraCourtPortfolioPage() {
         nameSerif="EZRA COURT"
         locationSans="LEKKI, LAGOS."
         intro="A well-planned residential community combining thoughtful design with quality finishes."
-        imageSrc="/hero/ezra.svg"
+        imageSrc="/ezra/ezra-2.jpeg"
         imageAlt="Ezra Court residential development at dusk"
         badges={[...(EZRA_COURT.badges ?? []), "Sold Out"]}
         soldOut={EZRA_COURT.soldOut ?? false}

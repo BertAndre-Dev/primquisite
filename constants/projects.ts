@@ -14,7 +14,7 @@ export const LANDING_PROJECTS: Project[] = [
     id: "ezra-court",
     title: "Ezra Court",
     location: "Lekki",
-    imageSrc: "/ezra/ezra-5.JPG",
+    imageSrc: "/ezra/ezra-2.jpeg",
     status: "active",
     slug: "ezra-court",
     badges: ["Residential", "Luxury Homes"],
