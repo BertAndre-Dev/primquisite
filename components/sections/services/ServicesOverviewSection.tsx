@@ -22,7 +22,7 @@ const SERVICES: ServiceItem[] = [
     label: "01",
     title: "Property Development & Investment",
     description:
-      "We develop and co-develop premium residential and commercial properties across prime locations — from land to delivery.",
+      "We develop and co-develop premium residential and commercial properties across prime locations, from land to delivery.",
     bullets: [
       "Site identification",
       "Feasibility analysis",
@@ -38,7 +38,7 @@ const SERVICES: ServiceItem[] = [
     label: "02",
     title: "PropTech & Digital Property Management",
     description:
-      "We deploy Berta Hub to transform estate operations and resident experience — billing, utilities, communication, and engagement in one platform.",
+      "We deploy Berta Hub to transform estate operations and resident experience, billing, utilities, communication, and engagement in one platform.",
     bullets: [
       "Centralized estate operations",
       "Resident engagement tools",
@@ -135,7 +135,7 @@ export function ServicesOverviewSection() {
             craft.
           </p>
 
-          <nav
+          {/* <nav
             className="mt-10 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             aria-label="Jump to a service"
           >
@@ -148,7 +148,7 @@ export function ServicesOverviewSection() {
                 {service.label} · {shortNavLabel(service.title)}
               </a>
             ))}
-          </nav>
+          </nav> */}
         </div>
       </section>
 
