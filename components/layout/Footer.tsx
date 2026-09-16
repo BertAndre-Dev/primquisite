@@ -33,11 +33,11 @@ const socialLinks = [
     icon: "/icons/linkdln.svg",
     label: "LinkedIn",
   },
-  {
-    href: "https://www.facebook.com/share/14RzBtLxoV4/?mibextid=wwXIfr",
-    icon: "/icons/facebook.svg",
-    label: "Facebook",
-  },
+  // {
+  //   href: "https://www.facebook.com/share/14RzBtLxoV4/?mibextid=wwXIfr",
+  //   icon: "/icons/facebook.svg",
+  //   label: "Facebook",
+  // },
 ];
 
 export function Footer() {
@@ -102,6 +102,8 @@ export function Footer() {
                   key={item.label}
                   href={item.href}
                   aria-label={item.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDA74F] transition-all duration-200 ease-out hover:bg-[#DDA74F]/10 hover:brightness-110 active:scale-[0.96] motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#DDA74F]/80"
                 >
                   <Image
