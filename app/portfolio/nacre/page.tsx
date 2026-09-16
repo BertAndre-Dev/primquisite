@@ -12,6 +12,9 @@ const serif = Cormorant_Garamond({
 });
 
 const NACRE_GALLERY = [
+  { src: "/nacre/nacre-13.jpeg", alt: "Nacre residential development" },
+  { src: "/nacre/nacre-14.jpeg", alt: "Nacre residential development" },
+  { src: "/nacre/nacre-15.jpeg", alt: "Nacre residential development" },
   { src: "/nacre/nacre-1.jpeg", alt: "Nacre residential development" },
   { src: "/nacre/nacre-2.jpeg", alt: "Nacre residential development exterior" },
   { src: "/nacre/nacre-3.jpeg", alt: "Nacre residential community" },
@@ -20,6 +23,7 @@ const NACRE_GALLERY = [
   { src: "/nacre/nacre-6.jpeg", alt: "Nacre residential development view" },
   { src: "/nacre/nacre-7.jpeg", alt: "Nacre residential landscaping" },
   { src: "/nacre/nacre-8.jpeg", alt: "Nacre residential building" },
+  { src: "/nacre/nacre-16.jpeg", alt: "Nacre residential development" },
   { src: "/nacre/nacre-9.jpeg", alt: "Nacre residential architecture" },
   { src: "/nacre/nacre-10.jpeg", alt: "Nacre residential project" },
   { src: "/nacre/nacre-11.png", alt: "Nacre residential project" },

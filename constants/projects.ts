@@ -33,7 +33,7 @@ export const LANDING_PROJECTS: Project[] = [
     id: "nacre",
     title: "Nacre",
     location: "Ikoyi",
-    imageSrc: "/nacre/nacre-13.png",
+    imageSrc: "/nacre/nacre-13.jpeg",
     status: "ongoing",
     slug: "nacre",
     badges: ["Residential", "Luxury Homes", "Active"],
