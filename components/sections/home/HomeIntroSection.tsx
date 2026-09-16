@@ -22,17 +22,6 @@ export function HomeIntroSection() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 loading="lazy"
               />
-
-              <div className="absolute left-0 top-0 bg-[#231F20] p-3 md:p-4">
-                <Image
-                  src="/logo.svg"
-                  alt="Primquisite Real Estate logo"
-                  width={100}
-                  height={100}
-                  className="h-20 w-20 object-contain md:h-[80px] md:w-[80px]"
-                  loading="lazy"
-                />
-              </div>
             </div>
           </div>
 

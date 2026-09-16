@@ -19,19 +19,17 @@ export const metadata = createPageMetadata({
 
 export default function ServicesPage() {
   return (
-    <div className="pt-24">
-      <StaggerMount>
-        <PortfolioProjectHero
-          heading="SERVICES"
-          subtitle="What We Offer"
-          backgroundImage={HERO_FIRST_SLIDE_IMAGE}
-          breadcrumbs={[
-            { label: "HOME", href: "/" },
-            { label: "SERVICES", href: "/services" },
-          ]}
-        />
-        <ServicesOverviewSection />
-      </StaggerMount>
-    </div>
+    <StaggerMount>
+      <PortfolioProjectHero
+        heading="SERVICES"
+        subtitle="Development, PropTech, operations, and compliance — end-to-end services that keep properties performing for the long term."
+        backgroundImage={HERO_FIRST_SLIDE_IMAGE}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+        ]}
+      />
+      <ServicesOverviewSection />
+    </StaggerMount>
   );
 }

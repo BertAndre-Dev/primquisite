@@ -1,7 +1,7 @@
-import { BlogCard } from "@/components/blog/BlogCard";
 import { StaggerMount } from "@/components/motion/StaggerMount";
 import { PortfolioContactSection } from "@/components/portfolio/PortfolioContactSection";
 import { PortfolioProjectHero } from "@/components/portfolio/PortfolioProjectHero";
+import { BlogIndexSection } from "@/components/sections/blog/BlogIndexSection";
 import { BLOG_POSTS } from "@/constants/blog";
 import { HERO_FIRST_SLIDE_IMAGE } from "@/constants/heroSlides";
 import { createPageMetadata } from "@/lib/seo";
@@ -32,13 +32,7 @@ export default function BlogPage() {
         ]}
       />
 
-      <section className="bg-white px-4 py-14 md:px-6 md:py-20 lg:px-8">
-        <div className="mx-auto grid w-full max-w-7xl gap-12 md:gap-16">
-          {BLOG_POSTS.map((post) => (
-            <BlogCard key={post.slug} post={post} />
-          ))}
-        </div>
-      </section>
+      <BlogIndexSection posts={BLOG_POSTS} />
 
       <PortfolioContactSection />
     </StaggerMount>

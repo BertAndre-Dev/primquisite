@@ -44,7 +44,7 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[#231F20]/55 backdrop-blur-sm">
       <nav
-        className={`mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 md:px-6 lg:px-8 ${
+        className={`mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 ${
           open ? "relative z-[101]" : ""
         }`}
       >

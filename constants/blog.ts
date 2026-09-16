@@ -382,3 +382,23 @@ export function formatBlogDate(isoDate: string): string {
     day: "numeric",
   });
 }
+
+/** Approximate reading time from article copy (~200 wpm). */
+export function getBlogReadingMinutes(post: BlogPost): number {
+  const chunks = [
+    post.title,
+    post.excerpt,
+    ...post.intro,
+    ...post.sections.flatMap((section) => [
+      section.heading,
+      ...section.paragraphs,
+      ...(section.bullets ?? []),
+    ]),
+  ];
+  const words = chunks
+    .join(" ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}

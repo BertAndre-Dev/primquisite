@@ -26,7 +26,7 @@ export const ABOUT_CAROUSEL_SLIDES: AboutCarouselSlide[] = [
   {
     id: "mission-vision",
     layout: "mission-vision",
-    leftImage: "/about/mission.svg",
+    leftImage: "/nacre/nacre-13.jpeg",
     leftImageAlt: "Primquisite residential development at dusk",
     mission: {
       body: "To deliver real estate investments that create long-term value through strong execution, transparency, and quality.",
@@ -39,7 +39,7 @@ export const ABOUT_CAROUSEL_SLIDES: AboutCarouselSlide[] = [
     id: "approach",
     layout: "bullets",
     title: "OUR APPROACH",
-    leftImage: "/about/engineer.svg",
+    leftImage: "/nacre/nacre-16.png",
     leftImageAlt: "Construction and project delivery",
     intro: "We operate across the full lifecycle:",
     bullets: [
@@ -55,7 +55,7 @@ export const ABOUT_CAROUSEL_SLIDES: AboutCarouselSlide[] = [
     id: "why",
     layout: "bullets",
     title: "WHY WE EXIST",
-    leftImage: "/about/house.svg",
+    leftImage: "/arabella/arabella-9.png",
     leftImageAlt: "Modern residential development",
     intro: "We address key industry challenges:",
     bullets: [
