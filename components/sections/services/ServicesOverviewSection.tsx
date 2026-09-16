@@ -260,7 +260,7 @@ function ServiceRow({
             >
               <span className="h-3 w-px bg-white/20" aria-hidden />
               <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-white/65">
-                {(service.title)} 
+                {service.title}
               </span>
             </div>
           </div>
