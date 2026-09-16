@@ -15,7 +15,7 @@ export function HomeIntroSection() {
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-200 ring-1 ring-black/5 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.25)] lg:aspect-auto lg:min-h-[520px]">
               <Image
-                src="/frame.svg"
+                src="/arabella/arabella-9.png"
                 alt="Modern Primquisite Real Estate residential building exterior"
                 fill
                 className="object-cover object-center"

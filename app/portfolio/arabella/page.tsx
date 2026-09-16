@@ -13,7 +13,7 @@ const serif = Cormorant_Garamond({
 
 const ARABELLA_GALLERY = [
   { src: "/arabella/arabella-9.png", alt: "Arabella residential development" },
-  { src: "/hero/arabella.svg", alt: "Arabella residential development" },
+  // { src: "/hero/arabella.svg", alt: "Arabella residential development" },
   { src: "/arabella/arabella-1.jpeg", alt: "Arabella residential development exterior" },
   { src: "/arabella/arabella-2.jpeg", alt: "Arabella residential community" },
   { src: "/arabella/arabella-3.jpeg", alt: "Arabella residential amenities" },

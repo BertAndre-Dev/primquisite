@@ -18,6 +18,7 @@ const CRESCENDO_GALLERY = [
   // { src: "/cresendo/cres3.jpeg", alt: "Community and amenities" },
   // { src: "/cresendo/cres4.jpeg", alt: "Community and amenities" },
   { src: "/cresendo/crescendo-5.JPG", alt: "Crescendo residential development" },
+  { src: "/cresendo/crescendo-7.JPG", alt: "Crescendo residential development" },
   { src: "/cresendo/crescendo-6.JPG", alt: "Crescendo residential development" },
   { src: "/cresendo/crescendo-1.jpeg", alt: "Crescendo construction progress" },
   { src: "/cresendo/crescendo-2.jpeg", alt: "Crescendo residential exterior" },

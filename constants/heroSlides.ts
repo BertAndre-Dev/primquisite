@@ -18,7 +18,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     ctaHref: "/portfolio",
   },
   {
-    image: "/hero/arabella.svg",
+    image: "/arabella/arabella-9.png",
     title: "ARABELLA",
     subtitle:
       "A premium residential development delivering comfort, security, and strong asset value.",
@@ -42,7 +42,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     ctaHref: "/portfolio",
   },
   {
-    image: "/hero/ezra.svg",
+    image: "/ezra/ezra-5.JPG",
     title: "EZRA COURT",
     subtitle:
       "A well-planned residential community combining thoughtful design with quality finishes.",
