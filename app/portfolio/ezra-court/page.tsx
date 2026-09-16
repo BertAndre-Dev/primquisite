@@ -15,6 +15,7 @@ const serif = Cormorant_Garamond({
 const EZRA_COURT = LANDING_PROJECTS.find((project) => project.id === "ezra-court")!;
 
 const EZRA_GALLERY = [
+  { src: "/ezra/ezra-5.JPG", alt: "Ezra Court residential development" },
   { src: "/ezra/ezra-1.svg", alt: "Community and landscaping" },
   { src: "/ezra/ezra-2.svg", alt: "Residential amenities" },
   { src: "/ezra/ezra-3.jpeg", alt: "Residential amenities" },
