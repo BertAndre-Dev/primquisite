@@ -396,9 +396,9 @@ function WhoWeServeSection() {
             <p className="text-lg font-semibold text-white md:text-xl">
               Ready to talk about your next project?
             </p>
-            <p className="mt-1 text-sm text-[#D5CFC7] md:text-base">
-              Tell us what you&apos;re building — we&apos;ll help you shape the path.
-            </p>
+            {/* <p className="mt-1 text-sm text-[#D5CFC7] md:text-base">
+              Tell us about your project and we&apos;ll help you shape the path.
+            </p> */}
           </div>
           <Link
             href="/contact"
