@@ -164,8 +164,6 @@ export function ServicesOverviewSection() {
               <ScrollReveal
                 key={service.id}
                 delay={Math.min(index * 0.04, 0.16)}
-                distance={10}
-                duration={0.28}
               >
                 <ServiceRow
                   service={service}
