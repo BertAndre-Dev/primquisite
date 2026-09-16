@@ -41,7 +41,7 @@ export default function ArabellaPortfolioPage() {
       <PortfolioProjectHero
         heading="PORTFOLIO - ARABELLA"
         subtitle="Premium residential projects across prime Lagos locations, designed for quality, community, and long-term value."
-        backgroundImage="/hero/arabella.svg"
+        backgroundImage="/arabella/arabella-9.png"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Portfolio", href: "/portfolio" },
@@ -53,7 +53,7 @@ export default function ArabellaPortfolioPage() {
         nameSerif="ARABELLA"
         locationSans="LEKKI, LAGOS."
         intro="A premium residential development delivering comfort, security, and strong asset value."
-        imageSrc="/hero/arabella.svg"
+        imageSrc="/arabella/arabella-9.png"
         imageAlt="Arabella modern residential building"
         badges={["Residential", "Luxury Homes", "Ongoing"]}
       />
