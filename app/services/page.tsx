@@ -22,7 +22,7 @@ export default function ServicesPage() {
     <StaggerMount>
       <PortfolioProjectHero
         heading="SERVICES"
-        subtitle="Development, PropTech, operations, and compliance — end-to-end services that keep properties performing for the long term."
+        subtitle="Development, PropTech, operations, and compliance, end-to-end services that keep properties performing for the long term."
         backgroundImage={HERO_FIRST_SLIDE_IMAGE}
         breadcrumbs={[
           { label: "Home", href: "/" },
