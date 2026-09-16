@@ -5,7 +5,7 @@ export const LANDING_PROJECTS: Project[] = [
     id: "arabella",
     title: "Arabella",
     location: "Lekki Phase 1",
-    imageSrc: "/hero/arabella.svg",
+    imageSrc: "/arabella-9.png",
     status: "active",
     slug: "arabella",
     badges: ["Residential", "Luxury Homes", "Ongoing"],
